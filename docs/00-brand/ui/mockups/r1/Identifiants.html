@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>Identifiants</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:'Plus Jakarta Sans',sans-serif;color:#1A1D3A;background:#F6F7FB}
+[dir=rtl] body, body[dir=rtl]{font-family:'IBM Plex Sans Arabic',sans-serif}
+a{color:#2B3990;text-decoration:none}
+.app{display:flex;min-height:900px;align-items:stretch}
+.side{width:264px;flex-shrink:0;background:#fff;border-inline-end:1px solid #E6E8F0;padding:24px 16px;display:flex;flex-direction:column;gap:28px}
+.brand{display:flex;align-items:center;gap:10px;padding:0 8px}
+.brand img{height:34px}
+.brand div{font-size:17px;letter-spacing:-.3px;line-height:1.1;direction:ltr}
+.nav{display:flex;flex-direction:column;gap:4px}
+.nav a{display:flex;align-items:center;gap:12px;height:44px;padding:0 12px;border-radius:12px;color:#4A4F72;font-size:14px;font-weight:600}
+.nav a.on{background:#EEF0FA;color:#2B3990;font-weight:700}
+.over{padding:0 12px 6px;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#6B7090}
+.grp{display:flex;align-items:center;gap:12px;height:40px;padding:0 12px;border-radius:12px;color:#1A1D3A;font-size:14px;font-weight:600}
+.sq{width:24px;height:24px;border-radius:7px;color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ucard{margin-top:auto;display:flex;align-items:center;gap:12px;padding:12px;border:1px solid #E6E8F0;border-radius:16px}
+.av{border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;direction:ltr}
+.main{flex:1;min-width:0;display:flex;flex-direction:column}
+.top{height:72px;flex-shrink:0;display:flex;align-items:center;gap:12px;padding:0 32px;background:#fff;border-bottom:1px solid #E6E8F0}
+.search{flex:0 1 420px;display:flex;align-items:center;gap:10px;height:44px;padding:0 14px;background:#F6F7FB;border:1px solid #E6E8F0;border-radius:12px;color:#6B7090;font-size:14px}
+.btn{height:44px;padding:0 18px;border:none;border-radius:12px;font-family:inherit;font-size:14px;font-weight:700;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;cursor:pointer}
+.primary{background:#2B3990;color:#fff}
+.secondary{background:#fff;color:#1A1D3A;border:1px solid #E6E8F0}
+.tonal{background:#EEF0FA;color:#2B3990;font-weight:800}
+.ghost{background:transparent;color:#4A4F72}
+.danger{background:#fff;color:#B42525;border:1px solid #F6C9C9}
+.sm{height:38px;padding:0 14px;font-size:13px}
+.page{width:100%;max-width:1240px;padding:32px;display:flex;flex-direction:column;gap:24px}
+.ptitle{margin:0;font-size:38px;font-weight:800;letter-spacing:-1px}
+.card{background:#fff;border:1px solid #E6E8F0;border-radius:24px;padding:24px}
+.ch{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.ch h2{margin:0;flex:1;font-size:18px;font-weight:800}
+.count{padding:3px 9px;border-radius:999px;font-size:12px;font-weight:800}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
+.dot{width:6px;height:6px;border-radius:3px}
+.badge{display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.row{display:flex;align-items:center;gap:14px;padding:12px 0;border-top:1px solid #F0F1F6}
+.t15{font-size:15px;font-weight:700}
+.s13{font-size:13px;color:#6B7090}
+.cap{font-size:12px;font-weight:700;color:#6B7090}
+.tabs{display:inline-flex;padding:4px;background:#fff;border:1px solid #E6E8F0;border-radius:14px;gap:2px}
+.tabs span{height:36px;padding:0 16px;border-radius:10px;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#6B7090}
+.tabs span.on{background:#EEF0FA;color:#2B3990;font-weight:700}
+.field{display:flex;flex-direction:column;gap:8px}
+.field label{font-size:14px;font-weight:600}
+.input{display:flex;align-items:center;gap:10px;min-height:48px;padding:0 14px;background:#F6F7FB;border:1px solid #E6E8F0;border-radius:14px;color:#1A1D3A;font-size:15px}
+.input.focus{border:1.5px solid #2B3990}
+.hint{font-size:12px;color:#6B7090}
+.note{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:14px;background:#F6F7FB;font-size:13px;line-height:1.5;color:#4A4F72}
+.scrim{position:absolute;inset:0;background:rgba(26,29,58,.28)}
+.panel{position:absolute;top:0;bottom:0;inset-inline-end:0;width:520px;background:#fff;box-shadow:0 0 40px rgba(28,37,102,.18);display:flex;flex-direction:column}
+.panel-h{display:flex;align-items:center;gap:12px;padding:22px 24px;border-bottom:1px solid #E6E8F0}
+.panel-b{flex:1;overflow:hidden;padding:24px;display:flex;flex-direction:column;gap:20px}
+.panel-f{display:flex;gap:10px;justify-content:flex-end;padding:18px 24px;border-top:1px solid #E6E8F0}
+.seg{display:flex;padding:4px;background:#F6F7FB;border:1px solid #E6E8F0;border-radius:14px;gap:4px}
+.seg span{flex:1;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:600;color:#6B7090}
+.seg span.on{background:#fff;color:#2B3990;font-weight:700;box-shadow:0 1px 3px rgba(26,29,58,.12)}
+.ann{position:absolute;padding:6px 10px;border-radius:8px;background:#1A1D3A;color:#fff;font-size:12px;font-weight:700}
+</style></head>
+<body style="width:1440px;min-height:900px;position:relative">
+<div class="app" style="min-height:900px"><nav class="side">
+  <div class="brand"><img src="ng-symbol.png" alt=""><div><span style="font-weight:800;color:#2B3990">NextGeneration</span><br><span style="font-weight:500;color:#12A39A">Class</span></div></div>
+  <div class="nav"><a class=""><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg>Ma journée</a><a class=""><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Planning</a><a class="on"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Élèves</a><a class=""><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"/></svg>Contenus</a><a class=""><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg>Devoirs</a><a class=""><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>Annonces</a><a class=""><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Paramètres</a></div>
+  <div class="nav"><div class="over">Mes groupes</div><a class="grp"><span class="sq" style="background:#2B3990;color:#fff">7A</span><span style="flex:1">7ème A · Math</span><span class="cap" style="font-weight:500">8</span></a><a class="grp"><span class="sq" style="background:#12A39A;color:#fff">9B</span><span style="flex:1">9ème B · Math</span><span class="cap" style="font-weight:500">6</span></a><a class="grp"><span class="sq" style="background:#FFB020;color:#1A1D3A">BM</span><span style="flex:1">Bac Math</span><span class="cap" style="font-weight:500">5</span></a><a class="grp"><span class="sq" style="background:#7048E8;color:#fff">CP</span><span style="flex:1">Cours particuliers</span><span class="cap" style="font-weight:500">3</span></a></div>
+  <div class="ucard"><span class="av" style="width:40px;height:40px;background:#2B3990;color:#fff;font-size:14px">IH</span><div style="flex:1"><div style="font-size:14px;font-weight:700">Ines Haddad</div><div class="cap" style="font-weight:500">Enseignante</div></div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B7090" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="m6 9 6 6 6-6"/></svg></div>
+</nav><div class="main"><div class="top">
+  <div class="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>Rechercher un élève, un contenu…</div>
+  <div style="flex:1"></div>
+  <span class="btn secondary" style="height:40px;padding:0 14px;font-size:13px;color:#4A4F72">FR · ع</span>
+  <span class="btn secondary" style="width:44px;padding:0;justify-content:center;position:relative;color:#4A4F72"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span style="position:absolute;top:9px;inset-inline-end:10px;width:9px;height:9px;border-radius:5px;background:#FFB020;border:2px solid #fff"></span></span>
+  <span class="btn primary"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M5 12h14M12 5v14"/></svg>Créer</span>
+</div><main class="page">
+  <div style="display:flex;align-items:flex-end;gap:20px;flex-wrap:wrap">
+    <div style="flex:1;display:flex;flex-direction:column;gap:6px">
+      <h1 class="ptitle">Élèves</h1>
+      <div style="font-size:15px;color:#4A4F72">22 élèves, 4 groupes et 3 cours particuliers cette année.</div>
+    </div>
+    <span class="btn secondary"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>Importer</span>
+    <span class="btn secondary"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Nouveau groupe</span>
+    <span class="btn primary"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M5 12h14M12 5v14"/></svg>Nouvel élève</span>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+    <div class="tabs"><span class="on">Élèves <span class="count" style="background:#fff;color:#2B3990">22</span></span><span>Groupes <span class="count" style="background:#F6F7FB">4</span></span><span>Cours particuliers <span class="count" style="background:#F6F7FB">3</span></span><span>Archivés</span></div>
+    <div style="flex:1"></div>
+    <div class="search" style="width:280px;background:#fff"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>Nom, identifiant, téléphone</div>
+    <span class="btn secondary" style="color:#4A4F72"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg>Niveau : tous<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="m6 9 6 6 6-6"/></svg></span>
+  </div>
+  <section class="card" style="padding:8px 24px 10px">
+    <div style="display:flex;gap:14px;padding:12px 0" class="cap">
+      <span style="width:40px"></span><span style="flex:2">ÉLÈVE</span><span style="flex:2">GROUPES</span><span style="flex:2">PARENT</span><span style="width:110px">PRÉSENCE</span><span style="width:130px"></span><span style="width:18px"></span>
+    </div>
+    <div class="row" style="padding:14px 0">
+  <span class="av" style="width:40px;height:40px;background:#E3F6F4;color:#0B6E68;font-size:14px">AK</span>
+  <div style="flex:2;min-width:0"><div class="t15">Amine Kefi</div><div class="s13">7ème</div></div>
+  <div style="flex:2;display:flex;flex-wrap:wrap;gap:8px"><span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600"><span class="sq" style="background:#2B3990;color:#fff;width:20px;height:20px;border-radius:6px;font-size:10px">7A</span>7ème A · Math</span></div>
+  <div style="flex:2" class="s13"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;vertical-align:-2px;margin-inline-end:6px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>Mère · Sonia Kefi</div>
+  <div style="width:110px;display:flex;flex-direction:column;gap:6px">
+    <div style="font-size:13px;font-weight:800;color:#237A35">94 %</div>
+    <div style="height:6px;border-radius:3px;background:#F0F1F6"><div style="width:94%;height:6px;border-radius:3px;background:#237A35"></div></div>
+  </div>
+  <div style="width:130px;display:flex;justify-content:flex-end"></div>
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B7090" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="m9 18 6-6-6-6"/></svg>
+</div><div class="row" style="padding:14px 0">
+  <span class="av" style="width:40px;height:40px;background:#E7F6EA;color:#237A35;font-size:14px">LB</span>
+  <div style="flex:2;min-width:0"><div class="t15">Lina Bouzid</div><div class="s13">9ème</div></div>
+  <div style="flex:2;display:flex;flex-wrap:wrap;gap:8px"><span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600"><span class="sq" style="background:#12A39A;color:#fff;width:20px;height:20px;border-radius:6px;font-size:10px">9B</span>9ème B · Math</span></div>
+  <div style="flex:2" class="s13"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;vertical-align:-2px;margin-inline-end:6px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>Père · Karim Bouzid</div>
+  <div style="width:110px;display:flex;flex-direction:column;gap:6px">
+    <div style="font-size:13px;font-weight:800;color:#237A35">88 %</div>
+    <div style="height:6px;border-radius:3px;background:#F0F1F6"><div style="width:88%;height:6px;border-radius:3px;background:#237A35"></div></div>
+  </div>
+  <div style="width:130px;display:flex;justify-content:flex-end"></div>
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B7090" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="m9 18 6-6-6-6"/></svg>
+</div><div class="row" style="padding:14px 0">
+  <span class="av" style="width:40px;height:40px;background:#FDECEC;color:#B42525;font-size:14px">MJ</span>
+  <div style="flex:2;min-width:0"><div class="t15">Malek Jaziri</div><div class="s13">9ème</div></div>
+  <div style="flex:2;display:flex;flex-wrap:wrap;gap:8px"><span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600"><span class="sq" style="background:#12A39A;color:#fff;width:20px;height:20px;border-radius:6px;font-size:10px">9B</span>9ème B · Math</span></div>
+  <div style="flex:2" class="s13"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;vertical-align:-2px;margin-inline-end:6px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>Mère · Rim Jaziri</div>
+  <div style="width:110px;display:flex;flex-direction:column;gap:6px">
+    <div style="font-size:13px;font-weight:800;color:#B42525">71 %</div>
+    <div style="height:6px;border-radius:3px;background:#F0F1F6"><div style="width:71%;height:6px;border-radius:3px;background:#B42525"></div></div>
+  </div>
+  <div style="width:130px;display:flex;justify-content:flex-end"><span class="chip" style="background:#FDECEC;color:#B42525"><span class="dot" style="background:#E03131"></span>2 absences</span></div>
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B7090" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="m9 18 6-6-6-6"/></svg>
+</div><div class="row" style="padding:14px 0">
+  <span class="av" style="width:40px;height:40px;background:#FFF4DC;color:#9A6300;font-size:14px">NH</span>
+  <div style="flex:2;min-width:0"><div class="t15">Nour Hammami</div><div class="s13">Bac Math</div></div>
+  <div style="flex:2;display:flex;flex-wrap:wrap;gap:8px"><span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600"><span class="sq" style="background:#FFB020;color:#1A1D3A;width:20px;height:20px;border-radius:6px;font-size:10px">BM</span>Bac Math</span></div>
+  <div style="flex:2" class="s13"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;vertical-align:-2px;margin-inline-end:6px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>Mère · Hela Hammami</div>
+  <div style="width:110px;display:flex;flex-direction:column;gap:6px">
+    <div style="font-size:13px;font-weight:800;color:#237A35">96 %</div>
+    <div style="height:6px;border-radius:3px;background:#F0F1F6"><div style="width:96%;height:6px;border-radius:3px;background:#237A35"></div></div>
+  </div>
+  <div style="width:130px;display:flex;justify-content:flex-end"></div>
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B7090" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="m9 18 6-6-6-6"/></svg>
+</div><div class="row" style="padding:14px 0">
+  <span class="av" style="width:40px;height:40px;background:#FDEEE4;color:#B5440A;font-size:14px">RM</span>
+  <div style="flex:2;min-width:0"><div class="t15">Rayen Mansour</div><div class="s13">7ème</div></div>
+  <div style="flex:2;display:flex;flex-wrap:wrap;gap:8px"><span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600"><span class="sq" style="background:#2B3990;color:#fff;width:20px;height:20px;border-radius:6px;font-size:10px">7A</span>7ème A · Math</span></div>
+  <div style="flex:2" class="s13"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;vertical-align:-2px;margin-inline-end:6px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>Père · Sami Mansour</div>
+  <div style="width:110px;display:flex;flex-direction:column;gap:6px">
+    <div style="font-size:13px;font-weight:800;color:#237A35">90 %</div>
+    <div style="height:6px;border-radius:3px;background:#F0F1F6"><div style="width:90%;height:6px;border-radius:3px;background:#237A35"></div></div>
+  </div>
+  <div style="width:130px;display:flex;justify-content:flex-end"></div>
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B7090" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="m9 18 6-6-6-6"/></svg>
+</div><div class="row" style="padding:14px 0">
+  <span class="av" style="width:40px;height:40px;background:#F1ECFD;color:#5B34D6;font-size:14px">SB</span>
+  <div style="flex:2;min-width:0"><div class="t15">Sara Ben Amor</div><div class="s13">Bac Sciences</div></div>
+  <div style="flex:2;display:flex;flex-wrap:wrap;gap:8px"><span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600"><span class="sq" style="background:#7048E8;color:#fff;width:20px;height:20px;border-radius:6px;font-size:10px">CP</span>Physique · cours particulier</span></div>
+  <div style="flex:2" class="s13"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;vertical-align:-2px;margin-inline-end:6px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>Mère · Leila Ben Amor</div>
+  <div style="width:110px;display:flex;flex-direction:column;gap:6px">
+    <div style="font-size:13px;font-weight:800;color:#237A35">100 %</div>
+    <div style="height:6px;border-radius:3px;background:#F0F1F6"><div style="width:100%;height:6px;border-radius:3px;background:#237A35"></div></div>
+  </div>
+  <div style="width:130px;display:flex;justify-content:flex-end"></div>
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B7090" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="m9 18 6-6-6-6"/></svg>
+</div><div class="row" style="padding:14px 0">
+  <span class="av" style="width:40px;height:40px;background:#EAF0FF;color:#2F4AC0;font-size:14px">YT</span>
+  <div style="flex:2;min-width:0"><div class="t15">Yasmine Trabelsi</div><div class="s13">Bac Math</div></div>
+  <div style="flex:2;display:flex;flex-wrap:wrap;gap:8px"><span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600"><span class="sq" style="background:#FFB020;color:#1A1D3A;width:20px;height:20px;border-radius:6px;font-size:10px">BM</span>Bac Math</span></div>
+  <div style="flex:2" class="s13"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;vertical-align:-2px;margin-inline-end:6px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>Père · Nabil Trabelsi</div>
+  <div style="width:110px;display:flex;flex-direction:column;gap:6px">
+    <div style="font-size:13px;font-weight:800;color:#237A35">92 %</div>
+    <div style="height:6px;border-radius:3px;background:#F0F1F6"><div style="width:92%;height:6px;border-radius:3px;background:#237A35"></div></div>
+  </div>
+  <div style="width:130px;display:flex;justify-content:flex-end"></div>
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B7090" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="m9 18 6-6-6-6"/></svg>
+</div>
+  </section>
+</main></div></div><div class="scrim"></div>
+<div style="position:absolute;top:110px;left:50%;transform:translateX(-50%);width:600px;background:#fff;border-radius:28px;box-shadow:0 30px 80px rgba(28,37,102,.25);padding:28px;display:flex;flex-direction:column;gap:18px">
+  <div style="display:flex;align-items:center;gap:14px"><span class="badge" style="width:48px;height:48px;border-radius:14px;background:#E3F6F4;color:#0B6E68"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></svg></span><div style="flex:1"><div style="font-size:22px;font-weight:800">Identifiants créés</div><div class="s13">Envoyez-les maintenant : les mots de passe ne seront plus affichés.</div></div></div>
+  <div style="display:flex;flex-direction:column;gap:12px;padding:18px;border:1px solid #E6E8F0;border-radius:18px">
+  <div style="display:flex;align-items:center;gap:12px"><span class="av" style="width:40px;height:40px;background:#FDECEC;color:#B42525;font-size:14px">OS</span><div style="flex:1"><div class="t15">Omar Saidi</div><div class="s13">Élève · 7ème A · Math</div></div><span class="chip" style="background:#EAF0FF;color:#2F4AC0"><span class="dot" style="background:#3B5BDB"></span>Nouveau compte</span></div>
+  <div style="display:flex;gap:12px">
+    <div style="flex:1;padding:12px 14px;background:#F6F7FB;border-radius:14px"><div class="cap">IDENTIFIANT</div><div style="font-size:17px;font-weight:800;margin-top:4px;direction:ltr">omar.saidi</div></div>
+    <div style="flex:1;padding:12px 14px;background:#F6F7FB;border-radius:14px"><div class="cap">MOT DE PASSE TEMPORAIRE</div><div style="font-size:17px;font-weight:800;margin-top:4px;font-family:ui-monospace,Menlo,monospace;letter-spacing:1px">kprate4827</div></div>
+  </div>
+  <div style="display:flex;gap:10px"><span class="btn secondary sm"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copier</span><span class="btn tonal sm"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Copier le message</span></div>
+</div>
+  <div style="display:flex;flex-direction:column;gap:12px;padding:18px;border:1px solid #E6E8F0;border-radius:18px">
+  <div style="display:flex;align-items:center;gap:12px"><span class="av" style="width:40px;height:40px;background:#FFF4DC;color:#9A6300;font-size:14px">NS</span><div style="flex:1"><div class="t15">Nadia Saidi</div><div class="s13">Parent · se connecte avec son téléphone</div></div><span class="chip" style="background:#EAF0FF;color:#2F4AC0"><span class="dot" style="background:#3B5BDB"></span>Nouveau compte</span></div>
+  <div style="display:flex;gap:12px">
+    <div style="flex:1;padding:12px 14px;background:#F6F7FB;border-radius:14px"><div class="cap">IDENTIFIANT</div><div style="font-size:17px;font-weight:800;margin-top:4px;direction:ltr">22345678</div></div>
+    <div style="flex:1;padding:12px 14px;background:#F6F7FB;border-radius:14px"><div class="cap">MOT DE PASSE TEMPORAIRE</div><div style="font-size:17px;font-weight:800;margin-top:4px;font-family:ui-monospace,Menlo,monospace;letter-spacing:1px">mhwens5932</div></div>
+  </div>
+  <div style="display:flex;gap:10px"><span class="btn secondary sm"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copier</span><span class="btn tonal sm"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Copier le message</span></div>
+</div>
+  <div class="note"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2B3990" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span>Chacun choisira son propre mot de passe à la première connexion. En cas d'oubli : Fiche élève, Réinitialiser le mot de passe.</span></div>
+  <div style="display:flex;justify-content:flex-end"><span class="btn primary">J'ai envoyé les identifiants</span></div>
+</div>
+</body></html>

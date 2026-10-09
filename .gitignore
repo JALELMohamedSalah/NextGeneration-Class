@@ -1,0 +1,21 @@
+# Secrets (never commit)
+.env
+backend/.env
+infra/.env
+
+# Build output
+backend/target/
+
+# Uploaded files in development
+backend/data/
+
+# IDE and OS
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# The Flutter app has its own app/.gitignore
+
+# The client's original spec stays private (the refined docs are in docs/)
+docs/99-source/client_spec_v1.md

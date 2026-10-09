@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>Vérifier l'import</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:'Plus Jakarta Sans',sans-serif;color:#1A1D3A;background:#F6F7FB}
+[dir=rtl] body, body[dir=rtl]{font-family:'IBM Plex Sans Arabic',sans-serif}
+a{color:#2B3990;text-decoration:none}
+.app{display:flex;min-height:900px;align-items:stretch}
+.side{width:264px;flex-shrink:0;background:#fff;border-inline-end:1px solid #E6E8F0;padding:24px 16px;display:flex;flex-direction:column;gap:28px}
+.brand{display:flex;align-items:center;gap:10px;padding:0 8px}
+.brand img{height:34px}
+.brand div{font-size:17px;letter-spacing:-.3px;line-height:1.1;direction:ltr}
+.nav{display:flex;flex-direction:column;gap:4px}
+.nav a{display:flex;align-items:center;gap:12px;height:44px;padding:0 12px;border-radius:12px;color:#4A4F72;font-size:14px;font-weight:600}
+.nav a.on{background:#EEF0FA;color:#2B3990;font-weight:700}
+.over{padding:0 12px 6px;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#6B7090}
+.grp{display:flex;align-items:center;gap:12px;height:40px;padding:0 12px;border-radius:12px;color:#1A1D3A;font-size:14px;font-weight:600}
+.sq{width:24px;height:24px;border-radius:7px;color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ucard{margin-top:auto;display:flex;align-items:center;gap:12px;padding:12px;border:1px solid #E6E8F0;border-radius:16px}
+.av{border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;direction:ltr}
+.main{flex:1;min-width:0;display:flex;flex-direction:column}
+.top{height:72px;flex-shrink:0;display:flex;align-items:center;gap:12px;padding:0 32px;background:#fff;border-bottom:1px solid #E6E8F0}
+.search{flex:0 1 420px;display:flex;align-items:center;gap:10px;height:44px;padding:0 14px;background:#F6F7FB;border:1px solid #E6E8F0;border-radius:12px;color:#6B7090;font-size:14px}
+.btn{height:44px;padding:0 18px;border:none;border-radius:12px;font-family:inherit;font-size:14px;font-weight:700;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;cursor:pointer}
+.primary{background:#2B3990;color:#fff}
+.secondary{background:#fff;color:#1A1D3A;border:1px solid #E6E8F0}
+.tonal{background:#EEF0FA;color:#2B3990;font-weight:800}
+.ghost{background:transparent;color:#4A4F72}
+.danger{background:#fff;color:#B42525;border:1px solid #F6C9C9}
+.sm{height:38px;padding:0 14px;font-size:13px}
+.page{width:100%;max-width:1240px;padding:32px;display:flex;flex-direction:column;gap:24px}
+.ptitle{margin:0;font-size:38px;font-weight:800;letter-spacing:-1px}
+.card{background:#fff;border:1px solid #E6E8F0;border-radius:24px;padding:24px}
+.ch{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.ch h2{margin:0;flex:1;font-size:18px;font-weight:800}
+.count{padding:3px 9px;border-radius:999px;font-size:12px;font-weight:800}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
+.dot{width:6px;height:6px;border-radius:3px}
+.badge{display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.row{display:flex;align-items:center;gap:14px;padding:12px 0;border-top:1px solid #F0F1F6}
+.t15{font-size:15px;font-weight:700}
+.s13{font-size:13px;color:#6B7090}
+.cap{font-size:12px;font-weight:700;color:#6B7090}
+.tabs{display:inline-flex;padding:4px;background:#fff;border:1px solid #E6E8F0;border-radius:14px;gap:2px}
+.tabs span{height:36px;padding:0 16px;border-radius:10px;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#6B7090}
+.tabs span.on{background:#EEF0FA;color:#2B3990;font-weight:700}
+.field{display:flex;flex-direction:column;gap:8px}
+.field label{font-size:14px;font-weight:600}
+.input{display:flex;align-items:center;gap:10px;min-height:48px;padding:0 14px;background:#F6F7FB;border:1px solid #E6E8F0;border-radius:14px;color:#1A1D3A;font-size:15px}
+.input.focus{border:1.5px solid #2B3990}
+.hint{font-size:12px;color:#6B7090}
+.note{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:14px;background:#F6F7FB;font-size:13px;line-height:1.5;color:#4A4F72}
+.scrim{position:absolute;inset:0;background:rgba(26,29,58,.28)}
+.panel{position:absolute;top:0;bottom:0;inset-inline-end:0;width:520px;background:#fff;box-shadow:0 0 40px rgba(28,37,102,.18);display:flex;flex-direction:column}
+.panel-h{display:flex;align-items:center;gap:12px;padding:22px 24px;border-bottom:1px solid #E6E8F0}
+.panel-b{flex:1;overflow:hidden;padding:24px;display:flex;flex-direction:column;gap:20px}
+.panel-f{display:flex;gap:10px;justify-content:flex-end;padding:18px 24px;border-top:1px solid #E6E8F0}
+.seg{display:flex;padding:4px;background:#F6F7FB;border:1px solid #E6E8F0;border-radius:14px;gap:4px}
+.seg span{flex:1;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:600;color:#6B7090}
+.seg span.on{background:#fff;color:#2B3990;font-weight:700;box-shadow:0 1px 3px rgba(26,29,58,.12)}
+.ann{position:absolute;padding:6px 10px;border-radius:8px;background:#1A1D3A;color:#fff;font-size:12px;font-weight:700}
+</style></head>
+<body style="width:1440px;min-height:1200px;position:relative">
+<div class="app" style="min-height:1200px"><nav class="side">
+  <div class="brand"><img src="ng-symbol.png" alt=""><div><span style="font-weight:800;color:#2B3990">NextGeneration</span><br><span style="font-weight:500;color:#12A39A">Class</span></div></div>
+  <div class="nav"><a class=""><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg>Ma journée</a><a class=""><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Planning</a><a class="on"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Élèves</a><a class=""><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"/></svg>Contenus</a><a class=""><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg>Devoirs</a><a class=""><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>Annonces</a><a class=""><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Paramètres</a></div>
+  <div class="nav"><div class="over">Mes groupes</div><a class="grp"><span class="sq" style="background:#2B3990;color:#fff">4A</span><span style="flex:1">4ème année · Maths</span><span class="cap" style="font-weight:500">6</span></a><a class="grp"><span class="sq" style="background:#12A39A;color:#fff">4L</span><span style="flex:1">4ème année · Lecture</span><span class="cap" style="font-weight:500">5</span></a><a class="grp"><span class="sq" style="background:#FFB020;color:#1A1D3A">6E</span><span style="flex:1">6ème année · Éveil</span><span class="cap" style="font-weight:500">4</span></a><a class="grp"><span class="sq" style="background:#7048E8;color:#fff">SB</span><span style="flex:1">Sara Ben Amor · Lecture</span><span class="cap" style="font-weight:500">1</span></a></div>
+  <div class="ucard"><span class="av" style="width:40px;height:40px;background:#2B3990;color:#fff;font-size:14px">IH</span><div style="flex:1"><div style="font-size:14px;font-weight:700">Ines Haddad</div><div class="cap" style="font-weight:500">Enseignante</div></div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B7090" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="m6 9 6 6 6-6"/></svg></div>
+</nav><div class="main"><div class="top">
+  <div style="flex:1"></div>
+  <span class="btn secondary" style="height:40px;padding:0 14px;font-size:13px;color:#4A4F72">FR · ع</span>
+  <span class="btn secondary" style="width:44px;height:44px;padding:0;justify-content:center;position:relative;color:#4A4F72"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>
+  <span class="btn primary"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M5 12h14M12 5v14"/></svg>Créer</span>
+</div><main class="page" style="max-width:1176px;padding-bottom:110px">
+  <div style="display:flex;align-items:center;gap:8px" class="s13"><span style="color:#2B3990;font-weight:700;display:flex;align-items:center;gap:6px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Élèves</span></div>
+  <div style="display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap">
+    <div style="flex:1;min-width:300px"><h1 class="ptitle">Importer des élèves</h1><div style="font-size:15px;color:#4A4F72;margin-top:6px">classe-4A.xlsx · 7 lignes lues. Vérifiez avant de créer les élèves.</div></div>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px"><div style="display:flex;align-items:center;gap:10px"><span style="width:28px;height:28px;border-radius:14px;background:#2B3990;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M20 6 9 17l-5-5"/></svg></span><span style="font-size:14px;font-weight:600;color:#6B7090">Fichier</span></div><span style="flex:0 0 48px;height:2px;background:#2B3990"></span><div style="display:flex;align-items:center;gap:10px"><span style="width:28px;height:28px;border-radius:14px;background:#2B3990;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800">2</span><span style="font-size:14px;font-weight:800;color:#1A1D3A">Vérifier</span></div><span style="flex:0 0 48px;height:2px;background:#E6E8F0"></span><div style="display:flex;align-items:center;gap:10px"><span style="width:28px;height:28px;border-radius:14px;background:#fff;color:#6B7090;border:1.5px solid #CDD0DE;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800">3</span><span style="font-size:14px;font-weight:600;color:#6B7090">Identifiants</span></div></div>
+  <div style="display:flex;gap:12px"><div style="flex:1;padding:16px 18px;border-radius:20px;background:#fff;border:1px solid #E6E8F0;display:flex;align-items:center;gap:14px"><span style="width:6px;height:40px;border-radius:3px;background:#2F9E44"></span><div><div style="font-size:28px;font-weight:800;line-height:1">4</div><div class="s13" style="margin-top:4px">Prêts à importer</div></div></div><div style="flex:1;padding:16px 18px;border-radius:20px;background:#fff;border:1px solid #E6E8F0;display:flex;align-items:center;gap:14px"><span style="width:6px;height:40px;border-radius:3px;background:#3B5BDB"></span><div><div style="font-size:28px;font-weight:800;line-height:1">1</div><div class="s13" style="margin-top:4px">Parent déjà inscrit, lié</div></div></div><div style="flex:1;padding:16px 18px;border-radius:20px;background:#fff;border:1px solid #E6E8F0;display:flex;align-items:center;gap:14px"><span style="width:6px;height:40px;border-radius:3px;background:#FFB020"></span><div><div style="font-size:28px;font-weight:800;line-height:1">1</div><div class="s13" style="margin-top:4px">Déjà inscrit, ignoré</div></div></div><div style="flex:1;padding:16px 18px;border-radius:20px;background:#fff;border:1px solid #E6E8F0;display:flex;align-items:center;gap:14px"><span style="width:6px;height:40px;border-radius:3px;background:#E03131"></span><div><div style="font-size:28px;font-weight:800;line-height:1">2</div><div class="s13" style="margin-top:4px">À corriger dans le fichier</div></div></div></div>
+  <section class="card" style="padding:8px 24px">
+    <div style="display:flex;gap:14px;padding:14px 0 10px;border-bottom:1px solid #F0F1F6" class="cap">
+      <span style="width:30px"></span><span style="width:36px">LIGNE</span><span style="width:40px"></span><span style="flex:1.4">ÉLÈVE</span><span style="width:190px">GROUPE</span><span style="width:180px">PARENT</span><span style="width:170px">ÉTAT</span>
+    </div>
+    <div class="row" style="padding:12px 0;align-items:flex-start;border-top:none;">
+  <div style="width:30px;padding-top:9px"><span style="color:#2B3990;display:flex"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="m8 12 3 3 5-6"/></svg></span></div>
+  <div style="width:36px;padding-top:11px" class="s13">2</div>
+  <span class="av" style="width:40px;height:40px;background:#EEF0FA;color:#2B3990;font-size:14px">YB</span>
+  <div style="flex:1.4;min-width:0"><div class="t15">Yassine Ben Ali</div><div class="s13" style="">4ème année</div></div>
+  <div style="width:190px;padding-top:9px" class="s13"><span style="display:flex;align-items:center;gap:8px"><span class="sq" style="width:20px;height:20px;background:#2B3990;color:#fff;font-size:10px">4A</span><span style="color:#1A1D3A">4ème année · Maths</span></span></div>
+  <div style="width:180px"><div style="font-size:14px;font-weight:600">Sonia Ben Ali</div><div class="s13" style="direction:ltr;text-align:start;">22 345 678</div></div>
+  <div style="width:170px;padding-top:7px"><span class="chip" style="background:#E7F6EA;color:#237A35"><span class="dot" style="background:#2F9E44"></span>Prêt</span></div>
+</div><div class="row" style="padding:12px 0;align-items:flex-start;;">
+  <div style="width:30px;padding-top:9px"><span style="color:#2B3990;display:flex"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="m8 12 3 3 5-6"/></svg></span></div>
+  <div style="width:36px;padding-top:11px" class="s13">3</div>
+  <span class="av" style="width:40px;height:40px;background:#E3F6F4;color:#0B6E68;font-size:14px">ET</span>
+  <div style="flex:1.4;min-width:0"><div class="t15">Eya Trabelsi</div><div class="s13" style="">4ème année</div></div>
+  <div style="width:190px;padding-top:9px" class="s13"><span style="display:flex;align-items:center;gap:8px"><span class="sq" style="width:20px;height:20px;background:#2B3990;color:#fff;font-size:10px">4A</span><span style="color:#1A1D3A">4ème année · Maths</span></span></div>
+  <div style="width:180px"><div style="font-size:14px;font-weight:600">Nabil Trabelsi</div><div class="s13" style="direction:ltr;text-align:start;">98 123 456</div></div>
+  <div style="width:170px;padding-top:7px"><span class="chip" style="background:#E7F6EA;color:#237A35"><span class="dot" style="background:#2F9E44"></span>Prêt</span></div>
+</div><div class="row" style="padding:12px 0;align-items:flex-start;;">
+  <div style="width:30px;padding-top:9px"><span style="color:#2B3990;display:flex"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="m8 12 3 3 5-6"/></svg></span></div>
+  <div style="width:36px;padding-top:11px" class="s13">4</div>
+  <span class="av" style="width:40px;height:40px;background:#F1ECFD;color:#5B34D6;font-size:14px">RK</span>
+  <div style="flex:1.4;min-width:0"><div class="t15">Rania Kefi</div><div class="s13" style="">4ème année</div><div style="font-size:12px;margin-top:4px;color:#2F4AC0;font-weight:600">Sonia Kefi a déjà un accès : Rania rejoint ses enfants.</div></div>
+  <div style="width:190px;padding-top:9px" class="s13"><span style="display:flex;align-items:center;gap:8px"><span class="sq" style="width:20px;height:20px;background:#2B3990;color:#fff;font-size:10px">4A</span><span style="color:#1A1D3A">4ème année · Maths</span></span></div>
+  <div style="width:180px"><div style="font-size:14px;font-weight:600">Sonia Kefi</div><div class="s13" style="direction:ltr;text-align:start;">22 111 222</div></div>
+  <div style="width:170px;padding-top:7px"><span class="chip" style="background:#EAF0FF;color:#2F4AC0"><span class="dot" style="background:#3B5BDB"></span>Parent déjà inscrit</span></div>
+</div><div class="row" style="padding:12px 0;align-items:flex-start;;">
+  <div style="width:30px;padding-top:9px"><span style="display:block;width:22px;height:22px;border:2px solid #CDD0DE;border-radius:6px;flex-shrink:0"></span></div>
+  <div style="width:36px;padding-top:11px" class="s13">5</div>
+  <span class="av" style="width:40px;height:40px;background:#FFF4DC;color:#9A6300;font-size:14px">AK</span>
+  <div style="flex:1.4;min-width:0"><div class="t15">Amine Kefi</div><div class="s13" style="">4ème année</div><div style="font-size:12px;margin-top:4px;color:#9A6300;font-weight:600">Amine Kefi est déjà dans vos élèves : la ligne est ignorée.</div></div>
+  <div style="width:190px;padding-top:9px" class="s13"><span style="display:flex;align-items:center;gap:8px"><span class="sq" style="width:20px;height:20px;background:#2B3990;color:#fff;font-size:10px">4A</span><span style="color:#1A1D3A">4ème année · Maths</span></span></div>
+  <div style="width:180px"><div style="font-size:14px;font-weight:600">Sonia Kefi</div><div class="s13" style="direction:ltr;text-align:start;">22 111 222</div></div>
+  <div style="width:170px;padding-top:7px"><span class="chip" style="background:#FFF4DC;color:#9A6300"><span class="dot" style="background:#FFB020"></span>Déjà inscrit</span></div>
+</div><div class="row" style="padding:12px 0;align-items:flex-start;;background:#FFFAFA">
+  <div style="width:30px;padding-top:9px"><span style="display:block;width:22px;height:22px;border:2px solid #E6E8F0;background:#F6F7FB;border-radius:6px;flex-shrink:0"></span></div>
+  <div style="width:36px;padding-top:11px" class="s13">6</div>
+  <span class="av" style="width:40px;height:40px;background:#EAF0FF;color:#2F4AC0;font-size:14px">MG</span>
+  <div style="flex:1.4;min-width:0"><div class="t15">Mohamed Aziz Gharsalli</div><div class="s13" style="">4ème année</div><div style="font-size:12px;margin-top:4px;color:#B42525;font-weight:600">Téléphone du parent : 8 chiffres.</div></div>
+  <div style="width:190px;padding-top:9px" class="s13"><span style="display:flex;align-items:center;gap:8px"><span class="sq" style="width:20px;height:20px;background:#2B3990;color:#fff;font-size:10px">4A</span><span style="color:#1A1D3A">4ème année · Maths</span></span></div>
+  <div style="width:180px"><div style="font-size:14px;font-weight:600">Hela Gharsalli</div><div class="s13" style="direction:ltr;text-align:start;color:#B42525;font-weight:700">2234567</div></div>
+  <div style="width:170px;padding-top:7px"><span class="chip" style="background:#FDECEC;color:#B42525"><span class="dot" style="background:#E03131"></span>À corriger</span></div>
+</div><div class="row" style="padding:12px 0;align-items:flex-start;;background:#FFFAFA">
+  <div style="width:30px;padding-top:9px"><span style="display:block;width:22px;height:22px;border:2px solid #E6E8F0;background:#F6F7FB;border-radius:6px;flex-shrink:0"></span></div>
+  <div style="width:36px;padding-top:11px" class="s13">7</div>
+  <span class="av" style="width:40px;height:40px;background:#FDEEE4;color:#B5440A;font-size:14px">FJ</span>
+  <div style="flex:1.4;min-width:0"><div class="t15">Firas Jebali</div><div class="s13" style="color:#B42525;font-weight:700">7ème</div><div style="font-size:12px;margin-top:4px;color:#B42525;font-weight:600">Niveau inconnu : « 7ème ». De la 1ère à la 6ème année.</div></div>
+  <div style="width:190px;padding-top:9px" class="s13"><span style="display:flex;align-items:center;gap:8px"><span class="sq" style="width:20px;height:20px;background:#2B3990;color:#fff;font-size:10px">4A</span><span style="color:#1A1D3A">4ème année · Maths</span></span></div>
+  <div style="width:180px"><div style="font-size:14px;font-weight:600">Karim Jebali</div><div class="s13" style="direction:ltr;text-align:start;">55 678 901</div></div>
+  <div style="width:170px;padding-top:7px"><span class="chip" style="background:#FDECEC;color:#B42525"><span class="dot" style="background:#E03131"></span>À corriger</span></div>
+</div><div class="row" style="padding:12px 0;align-items:flex-start;;">
+  <div style="width:30px;padding-top:9px"><span style="color:#2B3990;display:flex"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="m8 12 3 3 5-6"/></svg></span></div>
+  <div style="width:36px;padding-top:11px" class="s13">8</div>
+  <span class="av" style="width:40px;height:40px;background:#E7F6EA;color:#237A35;font-size:14px">IM</span>
+  <div style="flex:1.4;min-width:0"><div class="t15">Ines Mabrouk</div><div class="s13" style="">4ème année</div></div>
+  <div style="width:190px;padding-top:9px" class="s13"><span style="display:flex;align-items:center;gap:8px"><span class="sq" style="width:20px;height:20px;background:#2B3990;color:#fff;font-size:10px">4A</span><span style="color:#1A1D3A">4ème année · Maths</span></span></div>
+  <div style="width:180px"><div class="s13">Aucun parent</div></div>
+  <div style="width:170px;padding-top:7px"><span class="chip" style="background:#E7F6EA;color:#237A35"><span class="dot" style="background:#2F9E44"></span>Prêt</span></div>
+</div>
+  </section>
+  <div class="note"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2B3990" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><span>Les lignes « À corriger » ne sont pas importées : corrigez-les dans votre fichier puis choisissez-le à nouveau, ou importez les autres maintenant et ajoutez ces élèves plus tard.</span></div>
+</main></div></div><div style="position:absolute;bottom:0;inset-inline-start:264px;inset-inline-end:0;height:84px;background:#fff;border-top:1px solid #E6E8F0;display:flex;align-items:center;gap:12px;padding:0 32px">
+  <div style="flex:1" class="s13"><b style="color:#1A1D3A;font-size:15px">5 élèves</b> seront ajoutés à 4ème année · Maths, avec 2 nouveaux accès parents.</div>
+  <span class="btn secondary"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"/></svg>Choisir un autre fichier</span>
+  <span class="btn primary">Importer 5 élèves<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+</div>
+</body></html>

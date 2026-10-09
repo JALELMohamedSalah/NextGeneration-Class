@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Mode séance</title>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2B3990}a:hover{color:#1C2566}
+</style>
+</helmet>
+<div style="width: 100%; min-height: 900px; background: #F6F7FB; font-family: 'Plus Jakarta Sans', sans-serif; color: #1A1D3A; display: flex; flex-direction: column;">
+
+  <header style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding: 16px 32px; background: #1C2566; color: #FFFFFF;">
+    <a href="#" style="display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 12px; border-radius: 12px; background: rgba(255,255,255,0.1); color: #FFFFFF; font-size: 13px; font-weight: 700; text-decoration: none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg>Ma journée</a>
+    <div style="display: flex; flex-direction: column; gap: 2px;">
+      <div style="font-size: 20px; font-weight: 800;">Math · 7ème A</div>
+      <div style="font-size: 13px; color: rgba(255,255,255,0.7);">10:00 à 11:30 · Salle 2 · Fractions</div>
+    </div>
+    <span style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; background: rgba(18,163,154,0.22); color: #7FE3DA; font-size: 13px; font-weight: 700;"><span style="width: 8px; height: 8px; border-radius: 4px; background: #3DD9C9;"></span>En cours · 32 min</span>
+    <div style="flex: 1;"></div>
+    <button type="button" style="height: 46px; padding: 0 20px; border: none; border-radius: 14px; background: #FFB020; color: #1A1D3A; font-family: inherit; font-size: 15px; font-weight: 800; display: flex; align-items: center; gap: 10px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><path d="m9 11 3 3L22 4"></path></svg>Terminer la séance</button>
+  </header>
+
+  <div style="flex: 1; display: flex; flex-wrap: wrap; gap: 24px; padding: 28px 32px; box-sizing: border-box; max-width: 1360px; width: 100%;">
+    <section style="flex: 5 1 420px; min-width: 0; background: #FFFFFF; border: 1px solid #E6E8F0; border-radius: 24px; padding: 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 18px;">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px;">
+        <h2 style="margin: 0; flex: 1; font-size: 18px; font-weight: 800;">Présences</h2>
+        <span style="font-size: 13px; font-weight: 600; color: #6B7090;">Touchez un élève pour changer</span>
+      </div>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <span style="padding: 6px 12px; border-radius: 999px; background: #E7F6EA; color: #237A35; font-size: 13px; font-weight: 700;">6 présents</span>
+        <span style="padding: 6px 12px; border-radius: 999px; background: #FDECEC; color: #B42525; font-size: 13px; font-weight: 700;">1 absent</span>
+        <span style="padding: 6px 12px; border-radius: 999px; background: #FDEEE4; color: #B5440A; font-size: 13px; font-weight: 700;">1 en retard</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px;">
+        <button type="button" style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1.5px solid #CDEBD3; border-radius: 16px; background: #F3FBF5; font-family: inherit; text-align: start;"><span style="width: 38px; height: 38px; border-radius: 19px; background: #FFFFFF; color: #237A35; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center;">AK</span><span style="flex: 1; font-size: 14px; font-weight: 700; color: #1A1D3A;">Amine Kefi</span><span style="font-size: 12px; font-weight: 800; color: #237A35;">Présent</span></button>
+        <button type="button" style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1.5px solid #CDEBD3; border-radius: 16px; background: #F3FBF5; font-family: inherit; text-align: start;"><span style="width: 38px; height: 38px; border-radius: 19px; background: #FFFFFF; color: #237A35; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center;">RM</span><span style="flex: 1; font-size: 14px; font-weight: 700; color: #1A1D3A;">Rayen Mansour</span><span style="font-size: 12px; font-weight: 800; color: #237A35;">Présent</span></button>
+        <button type="button" style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1.5px solid #F6C9C9; border-radius: 16px; background: #FEF5F5; font-family: inherit; text-align: start;"><span style="width: 38px; height: 38px; border-radius: 19px; background: #FFFFFF; color: #B42525; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center;">OS</span><span style="flex: 1; font-size: 14px; font-weight: 700; color: #1A1D3A;">Omar Saidi</span><span style="font-size: 12px; font-weight: 800; color: #B42525;">Absent</span></button>
+        <button type="button" style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1.5px solid #CDEBD3; border-radius: 16px; background: #F3FBF5; font-family: inherit; text-align: start;"><span style="width: 38px; height: 38px; border-radius: 19px; background: #FFFFFF; color: #237A35; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center;">EB</span><span style="flex: 1; font-size: 14px; font-weight: 700; color: #1A1D3A;">Eya Ben Salah</span><span style="font-size: 12px; font-weight: 800; color: #237A35;">Présent</span></button>
+        <button type="button" style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1.5px solid #F7D3BE; border-radius: 16px; background: #FEF7F2; font-family: inherit; text-align: start;"><span style="width: 38px; height: 38px; border-radius: 19px; background: #FFFFFF; color: #B5440A; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center;">SG</span><span style="flex: 1; font-size: 14px; font-weight: 700; color: #1A1D3A;">Skander Gharbi</span><span style="font-size: 12px; font-weight: 800; color: #B5440A;">En retard</span></button>
+        <button type="button" style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1.5px solid #CDEBD3; border-radius: 16px; background: #F3FBF5; font-family: inherit; text-align: start;"><span style="width: 38px; height: 38px; border-radius: 19px; background: #FFFFFF; color: #237A35; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center;">MJ</span><span style="flex: 1; font-size: 14px; font-weight: 700; color: #1A1D3A;">Mehdi Jlassi</span><span style="font-size: 12px; font-weight: 800; color: #237A35;">Présent</span></button>
+        <button type="button" style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1.5px solid #CDEBD3; border-radius: 16px; background: #F3FBF5; font-family: inherit; text-align: start;"><span style="width: 38px; height: 38px; border-radius: 19px; background: #FFFFFF; color: #237A35; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center;">SD</span><span style="flex: 1; font-size: 14px; font-weight: 700; color: #1A1D3A;">Sarra Dridi</span><span style="font-size: 12px; font-weight: 800; color: #237A35;">Présent</span></button>
+        <button type="button" style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1.5px solid #CDEBD3; border-radius: 16px; background: #F3FBF5; font-family: inherit; text-align: start;"><span style="width: 38px; height: 38px; border-radius: 19px; background: #FFFFFF; color: #237A35; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center;">AM</span><span style="flex: 1; font-size: 14px; font-weight: 700; color: #1A1D3A;">Ali Mejri</span><span style="font-size: 12px; font-weight: 800; color: #237A35;">Présent</span></button>
+      </div>
+    </section>
+
+    <div style="flex: 7 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 24px;">
+      <section style="background: #FFFFFF; border: 1px solid #E6E8F0; border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 14px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <h2 style="margin: 0; flex: 1; font-size: 18px; font-weight: 800;">Contenu du jour</h2>
+          <span style="padding: 5px 11px; border-radius: 999px; background: #EEF0FA; color: #2B3990; font-size: 12px; font-weight: 700;">Chapitre · Fractions</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; padding: 14px; border: 1px solid #E6E8F0; border-radius: 16px;">
+          <span style="width: 44px; height: 44px; border-radius: 12px; background: #EAF0FF; color: #2F4AC0; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></span>
+          <div style="flex: 1; min-width: 0;"><div style="font-size: 15px; font-weight: 700;">Cours : simplifier une fraction</div><div style="font-size: 13px; color: #6B7090;">PDF · 4 pages</div></div>
+          <button type="button" style="height: 40px; padding: 0 16px; border: 1px solid #E6E8F0; border-radius: 12px; background: #FFFFFF; font-family: inherit; font-size: 13px; font-weight: 700; color: #1A1D3A;">Ouvrir</button>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; padding: 14px; border: 1px solid #E6E8F0; border-radius: 16px;">
+          <span style="width: 44px; height: 44px; border-radius: 12px; background: #E3F6F4; color: #0B6E68; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 10 5-10 5L2 7l10-5Z"></path><path d="m2 17 10 5 10-5M2 12l10 5 10-5"></path></svg></span>
+          <div style="flex: 1; min-width: 0;"><div style="font-size: 15px; font-weight: 700;">Série 02 · exercices 3 à 5</div><div style="font-size: 13px; color: #6B7090;">Série · 6 exercices</div></div>
+          <button type="button" style="height: 40px; padding: 0 16px; border: 1px solid #E6E8F0; border-radius: 12px; background: #FFFFFF; font-family: inherit; font-size: 13px; font-weight: 700; color: #1A1D3A;">Ouvrir</button>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; padding: 14px; border: 1px solid #E6E8F0; border-radius: 16px;">
+          <span style="width: 44px; height: 44px; border-radius: 12px; background: #F1ECFD; color: #5B34D6; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 2 2 4-4M3 7l2 2 4-4M13 6h8M13 12h8M13 18h8"></path></svg></span>
+          <div style="flex: 1; min-width: 0;"><div style="font-size: 15px; font-weight: 700;">QCM Fractions</div><div style="font-size: 13px; color: #6B7090;">10 questions · 15 min</div></div>
+          <button type="button" style="height: 40px; padding: 0 16px; border: none; border-radius: 12px; background: #2B3990; font-family: inherit; font-size: 13px; font-weight: 700; color: #FFFFFF;">Lancer</button>
+        </div>
+      </section>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 24px;">
+        <section style="flex: 1 1 240px; min-width: 0; background: #FFF8E8; border: 1px solid #F8E3B3; border-radius: 24px; padding: 22px; display: flex; flex-direction: column; gap: 10px;">
+          <div style="font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #9A6300;">Dernière séance · jeudi</div>
+          <div style="font-size: 16px; line-height: 1.5; font-weight: 600;">Revoir la simplification avant la série 03. Omar a besoin d'exercices en plus.</div>
+        </section>
+        <section style="flex: 1 1 240px; min-width: 0; background: #FFFFFF; border: 1px solid #E6E8F0; border-radius: 24px; padding: 22px; display: flex; flex-direction: column; gap: 10px;">
+          <label for="quick-note" style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #6B7090;"><span>Note rapide</span><span style="text-transform: none; letter-spacing: 0; color: #237A35;">Enregistrée</span></label>
+          <textarea id="quick-note" rows="3" style="border: 1px solid #E6E8F0; border-radius: 14px; background: #F6F7FB; padding: 12px; font-family: inherit; font-size: 14px; color: #1A1D3A; resize: none;">Exercice 4 difficile pour la moitié du groupe.</textarea>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>Importer des élèves</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:'Plus Jakarta Sans',sans-serif;color:#1A1D3A;background:#F6F7FB}
+[dir=rtl] body, body[dir=rtl]{font-family:'IBM Plex Sans Arabic',sans-serif}
+a{color:#2B3990;text-decoration:none}
+.app{display:flex;min-height:900px;align-items:stretch}
+.side{width:264px;flex-shrink:0;background:#fff;border-inline-end:1px solid #E6E8F0;padding:24px 16px;display:flex;flex-direction:column;gap:28px}
+.brand{display:flex;align-items:center;gap:10px;padding:0 8px}
+.brand img{height:34px}
+.brand div{font-size:17px;letter-spacing:-.3px;line-height:1.1;direction:ltr}
+.nav{display:flex;flex-direction:column;gap:4px}
+.nav a{display:flex;align-items:center;gap:12px;height:44px;padding:0 12px;border-radius:12px;color:#4A4F72;font-size:14px;font-weight:600}
+.nav a.on{background:#EEF0FA;color:#2B3990;font-weight:700}
+.over{padding:0 12px 6px;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#6B7090}
+.grp{display:flex;align-items:center;gap:12px;height:40px;padding:0 12px;border-radius:12px;color:#1A1D3A;font-size:14px;font-weight:600}
+.sq{width:24px;height:24px;border-radius:7px;color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ucard{margin-top:auto;display:flex;align-items:center;gap:12px;padding:12px;border:1px solid #E6E8F0;border-radius:16px}
+.av{border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;direction:ltr}
+.main{flex:1;min-width:0;display:flex;flex-direction:column}
+.top{height:72px;flex-shrink:0;display:flex;align-items:center;gap:12px;padding:0 32px;background:#fff;border-bottom:1px solid #E6E8F0}
+.search{flex:0 1 420px;display:flex;align-items:center;gap:10px;height:44px;padding:0 14px;background:#F6F7FB;border:1px solid #E6E8F0;border-radius:12px;color:#6B7090;font-size:14px}
+.btn{height:44px;padding:0 18px;border:none;border-radius:12px;font-family:inherit;font-size:14px;font-weight:700;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;cursor:pointer}
+.primary{background:#2B3990;color:#fff}
+.secondary{background:#fff;color:#1A1D3A;border:1px solid #E6E8F0}
+.tonal{background:#EEF0FA;color:#2B3990;font-weight:800}
+.ghost{background:transparent;color:#4A4F72}
+.danger{background:#fff;color:#B42525;border:1px solid #F6C9C9}
+.sm{height:38px;padding:0 14px;font-size:13px}
+.page{width:100%;max-width:1240px;padding:32px;display:flex;flex-direction:column;gap:24px}
+.ptitle{margin:0;font-size:38px;font-weight:800;letter-spacing:-1px}
+.card{background:#fff;border:1px solid #E6E8F0;border-radius:24px;padding:24px}
+.ch{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.ch h2{margin:0;flex:1;font-size:18px;font-weight:800}
+.count{padding:3px 9px;border-radius:999px;font-size:12px;font-weight:800}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
+.dot{width:6px;height:6px;border-radius:3px}
+.badge{display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.row{display:flex;align-items:center;gap:14px;padding:12px 0;border-top:1px solid #F0F1F6}
+.t15{font-size:15px;font-weight:700}
+.s13{font-size:13px;color:#6B7090}
+.cap{font-size:12px;font-weight:700;color:#6B7090}
+.tabs{display:inline-flex;padding:4px;background:#fff;border:1px solid #E6E8F0;border-radius:14px;gap:2px}
+.tabs span{height:36px;padding:0 16px;border-radius:10px;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#6B7090}
+.tabs span.on{background:#EEF0FA;color:#2B3990;font-weight:700}
+.field{display:flex;flex-direction:column;gap:8px}
+.field label{font-size:14px;font-weight:600}
+.input{display:flex;align-items:center;gap:10px;min-height:48px;padding:0 14px;background:#F6F7FB;border:1px solid #E6E8F0;border-radius:14px;color:#1A1D3A;font-size:15px}
+.input.focus{border:1.5px solid #2B3990}
+.hint{font-size:12px;color:#6B7090}
+.note{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:14px;background:#F6F7FB;font-size:13px;line-height:1.5;color:#4A4F72}
+.scrim{position:absolute;inset:0;background:rgba(26,29,58,.28)}
+.panel{position:absolute;top:0;bottom:0;inset-inline-end:0;width:520px;background:#fff;box-shadow:0 0 40px rgba(28,37,102,.18);display:flex;flex-direction:column}
+.panel-h{display:flex;align-items:center;gap:12px;padding:22px 24px;border-bottom:1px solid #E6E8F0}
+.panel-b{flex:1;overflow:hidden;padding:24px;display:flex;flex-direction:column;gap:20px}
+.panel-f{display:flex;gap:10px;justify-content:flex-end;padding:18px 24px;border-top:1px solid #E6E8F0}
+.seg{display:flex;padding:4px;background:#F6F7FB;border:1px solid #E6E8F0;border-radius:14px;gap:4px}
+.seg span{flex:1;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:600;color:#6B7090}
+.seg span.on{background:#fff;color:#2B3990;font-weight:700;box-shadow:0 1px 3px rgba(26,29,58,.12)}
+.ann{position:absolute;padding:6px 10px;border-radius:8px;background:#1A1D3A;color:#fff;font-size:12px;font-weight:700}
+</style></head>
+<body style="width:1440px;min-height:1000px;position:relative">
+<div class="app" style="min-height:1000px"><nav class="side">
+  <div class="brand"><img src="ng-symbol.png" alt=""><div><span style="font-weight:800;color:#2B3990">NextGeneration</span><br><span style="font-weight:500;color:#12A39A">Class</span></div></div>
+  <div class="nav"><a class=""><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg>Ma journée</a><a class=""><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Planning</a><a class="on"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Élèves</a><a class=""><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"/></svg>Contenus</a><a class=""><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg>Devoirs</a><a class=""><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>Annonces</a><a class=""><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Paramètres</a></div>
+  <div class="nav"><div class="over">Mes groupes</div><a class="grp"><span class="sq" style="background:#2B3990;color:#fff">4A</span><span style="flex:1">4ème année · Maths</span><span class="cap" style="font-weight:500">6</span></a><a class="grp"><span class="sq" style="background:#12A39A;color:#fff">4L</span><span style="flex:1">4ème année · Lecture</span><span class="cap" style="font-weight:500">5</span></a><a class="grp"><span class="sq" style="background:#FFB020;color:#1A1D3A">6E</span><span style="flex:1">6ème année · Éveil</span><span class="cap" style="font-weight:500">4</span></a><a class="grp"><span class="sq" style="background:#7048E8;color:#fff">SB</span><span style="flex:1">Sara Ben Amor · Lecture</span><span class="cap" style="font-weight:500">1</span></a></div>
+  <div class="ucard"><span class="av" style="width:40px;height:40px;background:#2B3990;color:#fff;font-size:14px">IH</span><div style="flex:1"><div style="font-size:14px;font-weight:700">Ines Haddad</div><div class="cap" style="font-weight:500">Enseignante</div></div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B7090" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="m6 9 6 6 6-6"/></svg></div>
+</nav><div class="main"><div class="top">
+  <div style="flex:1"></div>
+  <span class="btn secondary" style="height:40px;padding:0 14px;font-size:13px;color:#4A4F72">FR · ع</span>
+  <span class="btn secondary" style="width:44px;height:44px;padding:0;justify-content:center;position:relative;color:#4A4F72"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>
+  <span class="btn primary"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M5 12h14M12 5v14"/></svg>Créer</span>
+</div><main class="page" style="max-width:1176px">
+  <div style="display:flex;align-items:center;gap:8px" class="s13"><span style="color:#2B3990;font-weight:700;display:flex;align-items:center;gap:6px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Élèves</span></div>
+  <div style="display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap">
+    <div style="flex:1;min-width:300px"><h1 class="ptitle">Importer des élèves</h1><div style="font-size:15px;color:#4A4F72;margin-top:6px">Une classe entière d'un coup, depuis Excel : les élèves, leurs parents et leurs accès.</div></div>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px"><div style="display:flex;align-items:center;gap:10px"><span style="width:28px;height:28px;border-radius:14px;background:#2B3990;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800">1</span><span style="font-size:14px;font-weight:800;color:#1A1D3A">Fichier</span></div><span style="flex:0 0 48px;height:2px;background:#E6E8F0"></span><div style="display:flex;align-items:center;gap:10px"><span style="width:28px;height:28px;border-radius:14px;background:#fff;color:#6B7090;border:1.5px solid #CDD0DE;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800">2</span><span style="font-size:14px;font-weight:600;color:#6B7090">Vérifier</span></div><span style="flex:0 0 48px;height:2px;background:#E6E8F0"></span><div style="display:flex;align-items:center;gap:10px"><span style="width:28px;height:28px;border-radius:14px;background:#fff;color:#6B7090;border:1.5px solid #CDD0DE;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800">3</span><span style="font-size:14px;font-weight:600;color:#6B7090">Identifiants</span></div></div>
+  <div style="display:flex;gap:24px;align-items:flex-start">
+    <div style="flex:7;display:flex;flex-direction:column;gap:24px"><div style="border:2px dashed #9AA3D9;background:#F4F5FC;border-radius:20px;padding:34px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center">
+    <span class="badge" style="width:56px;height:56px;border-radius:16px;background:#E7F6EA;color:#237A35"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4M8 13h8M8 17h8M12 11v8"/></svg></span>
+    <div style="font-size:18px;font-weight:800">Choisissez votre fichier</div>
+    <div class="s13" style="max-width:380px;line-height:1.5">Excel (.xlsx) ou CSV, 300 lignes au plus. Rien n'est créé avant la vérification.</div>
+    <span class="btn primary"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"/></svg>Choisir un fichier</span>
+  </div><section class="card" style="padding:22px">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><div style="flex:1"><div style="font-size:17px;font-weight:800">Les colonnes attendues</div>
+    <div class="s13" style="margin-top:2px">Une ligne par élève. Les noms de colonnes peuvent être en français ou en arabe. * obligatoire.</div></div>
+    <span class="btn secondary sm"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Télécharger le modèle</span></div>
+  <div style="border:1px solid #E6E8F0;border-radius:14px;overflow:hidden"><table style="border-collapse:collapse;width:100%;background:#fff"><tr style="background:#F6F7FB"><th style="text-align:start;padding:10px 12px;font-size:12px;font-weight:700;color:#4A4F72;border-bottom:1px solid #E6E8F0;white-space:nowrap">Prénom *</th><th style="text-align:start;padding:10px 12px;font-size:12px;font-weight:700;color:#4A4F72;border-bottom:1px solid #E6E8F0;white-space:nowrap">Nom *</th><th style="text-align:start;padding:10px 12px;font-size:12px;font-weight:700;color:#4A4F72;border-bottom:1px solid #E6E8F0;white-space:nowrap">Niveau</th><th style="text-align:start;padding:10px 12px;font-size:12px;font-weight:700;color:#4A4F72;border-bottom:1px solid #E6E8F0;white-space:nowrap">Groupe</th><th style="text-align:start;padding:10px 12px;font-size:12px;font-weight:700;color:#4A4F72;border-bottom:1px solid #E6E8F0;white-space:nowrap">Prénom du parent</th><th style="text-align:start;padding:10px 12px;font-size:12px;font-weight:700;color:#4A4F72;border-bottom:1px solid #E6E8F0;white-space:nowrap">Nom du parent</th><th style="text-align:start;padding:10px 12px;font-size:12px;font-weight:700;color:#4A4F72;border-bottom:1px solid #E6E8F0;white-space:nowrap">Téléphone du parent</th></tr><tr><td style="padding:10px 12px;font-size:13px;color:#1A1D3A;white-space:nowrap">Yassine</td><td style="padding:10px 12px;font-size:13px;color:#1A1D3A;white-space:nowrap">Ben Ali</td><td style="padding:10px 12px;font-size:13px;color:#1A1D3A;white-space:nowrap">4ème année</td><td style="padding:10px 12px;font-size:13px;color:#1A1D3A;white-space:nowrap">4ème année · Maths</td><td style="padding:10px 12px;font-size:13px;color:#1A1D3A;white-space:nowrap">Sonia</td><td style="padding:10px 12px;font-size:13px;color:#1A1D3A;white-space:nowrap">Ben Ali</td><td style="padding:10px 12px;font-size:13px;color:#1A1D3A;white-space:nowrap">22345678</td></tr></table></div>
+  <div style="display:flex;flex-direction:column;gap:6px;margin-top:14px">
+    <div class="s13" style="display:flex;gap:8px;align-items:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#237A35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M20 6 9 17l-5-5"/></svg>Un parent qui a plusieurs enfants : le même téléphone sur chaque ligne, un seul accès est créé.</div>
+    <div class="s13" style="display:flex;gap:8px;align-items:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#237A35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M20 6 9 17l-5-5"/></svg>Sans parent, l'élève est ajouté quand même ; vous ouvrirez un accès plus tard depuis sa fiche.</div>
+  </div>
+</section></div>
+    <div style="flex:5"><section class="card" style="padding:22px;display:flex;flex-direction:column;gap:16px">
+    <div style="font-size:17px;font-weight:800">Pour tous les élèves du fichier</div>
+    <div class="field"><label>Ajouter au groupe <span class="s13" style="font-weight:500">· facultatif</span></label>
+      <div class="input" style="justify-content:space-between"><span style="display:flex;align-items:center;gap:10px"><span class="sq" style="width:22px;height:22px;background:#2B3990;color:#fff;font-size:10px">4A</span>4ème année · Maths · 3 élèves</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B7090" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="m6 9 6 6 6-6"/></svg></div>
+      <div class="hint">La colonne « Groupe » du fichier compte aussi.</div></div>
+    <div class="field"><label>Niveau quand la colonne est vide</label>
+      <div class="input" style="justify-content:space-between"><span>4ème année</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B7090" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="m6 9 6 6 6-6"/></svg></div></div>
+    <div style="display:flex;gap:12px;align-items:flex-start;padding:14px;border:1px solid #E6E8F0;border-radius:14px">
+      <span style="width:42px;height:24px;border-radius:12px;background:#CDD0DE;position:relative;flex-shrink:0"><span style="position:absolute;top:3px;inset-inline-start:3px;width:18px;height:18px;border-radius:9px;background:#fff"></span></span>
+      <div><div style="font-size:14px;font-weight:700">Créer aussi l'accès des élèves</div><div class="s13" style="margin-top:2px;line-height:1.45">Sinon, seuls les parents reçoivent un accès (avec leur téléphone). Vous pourrez ouvrir celui d'un élève depuis sa fiche.</div></div>
+    </div>
+  </section></div>
+  </div>
+</main></div></div>
+</body></html>

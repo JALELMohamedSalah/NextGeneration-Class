@@ -1,0 +1,2042 @@
+{
+  "@@locale": "fr",
+  "appTitle": "NextGeneration Class",
+  "appShortName": "NG Class",
+  "tagline": "Enseigner, suivre, progresser.",
+  "loading": "Chargement…",
+  "loginSubtitle": "Connectez-vous avec l'identifiant donné par votre enseignante.",
+  "loginIdentifierLabel": "Identifiant ou téléphone",
+  "loginPasswordLabel": "Mot de passe",
+  "loginSubmit": "Se connecter",
+  "loginIdentifierRequired": "Saisissez votre identifiant ou votre téléphone.",
+  "loginPasswordRequired": "Saisissez votre mot de passe.",
+  "loginForgotHint": "Mot de passe oublié ? Demandez à votre enseignante de le réinitialiser.",
+  "loginFeaturePlanning": "Planning et présences",
+  "loginFeatureWork": "Devoirs et corrections",
+  "loginFeatureProgress": "Suivi des progrès",
+  "showPassword": "Afficher le mot de passe",
+  "hidePassword": "Masquer le mot de passe",
+  "errorNetwork": "Impossible de joindre le serveur. Vérifiez votre connexion.",
+  "errorUnknown": "Une erreur est survenue. Réessayez.",
+  "navTeacherHome": "Ma journée",
+  "navPlanning": "Planning",
+  "navStudents": "Élèves",
+  "navContents": "Contenus",
+  "navAssignments": "Devoirs",
+  "navAnnouncements": "Annonces",
+  "navSettings": "Paramètres",
+  "navMore": "Plus",
+  "navStudentHome": "Accueil",
+  "navCourses": "Cours",
+  "navResults": "Résultats",
+  "navParentOverview": "Aperçu",
+  "navNotifications": "Notifications",
+  "greeting": "Bonjour {firstName}",
+  "@greeting": {
+    "placeholders": {
+      "firstName": {
+        "type": "String"
+      }
+    }
+  },
+  "homeToday": "Aujourd'hui",
+  "homeToCorrect": "À corriger",
+  "homeMissing": "Travail manquant",
+  "homeUpcoming": "À venir",
+  "emptyToday": "Aucune séance aujourd'hui.",
+  "emptyToCorrect": "Rien à corriger. Bonne journée !",
+  "emptyMissing": "Tous les devoirs sont rendus.",
+  "emptyUpcoming": "Rien de prévu dans les 7 prochains jours.",
+  "quickCreate": "Créer",
+  "quickSession": "Séance",
+  "quickAssignment": "Devoir",
+  "quickSeries": "Série",
+  "comingSoonMessage": "Cette section arrive avec une prochaine version de l'application.",
+  "accountMenu": "Mon compte",
+  "language": "Langue",
+  "languageFrench": "Français",
+  "languageArabic": "العربية",
+  "changePassword": "Changer le mot de passe",
+  "logout": "Se déconnecter",
+  "roleTeacher": "Enseignante",
+  "roleStudent": "Élève",
+  "roleParent": "Parent",
+  "currentPassword": "Mot de passe actuel",
+  "temporaryPassword": "Mot de passe temporaire",
+  "newPassword": "Nouveau mot de passe",
+  "confirmPassword": "Confirmer le mot de passe",
+  "passwordRule": "Au moins 8 caractères, avec des lettres et des chiffres.",
+  "passwordsDoNotMatch": "Les deux mots de passe ne sont pas identiques.",
+  "passwordChanged": "Mot de passe modifié.",
+  "fieldRequired": "Ce champ est obligatoire.",
+  "save": "Enregistrer",
+  "cancel": "Annuler",
+  "mustChangePasswordTitle": "Choisissez votre mot de passe",
+  "mustChangePasswordMessage": "Votre enseignante vous a donné un mot de passe temporaire. Choisissez-en un nouveau pour continuer.",
+  "nextSession": "Prochaine séance",
+  "noSessionPlanned": "Aucune séance prévue pour le moment.",
+  "toDo": "À faire",
+  "nothingToDo": "Rien à faire pour le moment.",
+  "latestResults": "Derniers résultats",
+  "noGradeYet": "Pas encore de note.",
+  "attendance": "Présence",
+  "assignments": "Devoirs",
+  "parentNoChild": "Aucun enfant n'est lié à ce compte. Contactez l'enseignante.",
+  "parentNoDataYet": "Les informations apparaîtront ici dès les premières séances.",
+  "loginOverline": "Espace privé",
+  "loginWelcome": "Bon retour",
+  "loginBrandLine": "L'espace privé de votre enseignante, pour ses élèves et leurs parents.",
+  "loginFeaturePlanningText": "Séances, liens Meet et appel en un geste.",
+  "loginFeatureWorkText": "Rendus, file de correction, notes sur 20.",
+  "loginFeatureProgressText": "Les parents comprennent tout en une minute.",
+  "firstLoginOverline": "Première connexion",
+  "footerCopyright": "© NextGeneration Class",
+  "languageToggleShort": "FR · ع",
+  "searchPlaceholder": "Rechercher un élève, un contenu…",
+  "myGroups": "Mes groupes",
+  "homeSummaryEmpty": "Rien de prévu pour l'instant. Ajoutez vos élèves et vos séances pour remplir votre journée.",
+  "heroToday": "Aujourd'hui",
+  "heroFreeDayTitle": "Journée libre",
+  "heroFreeDayText": "Aucune séance prévue aujourd'hui.",
+  "planSession": "Planifier une séance",
+  "quickQcm": "QCM",
+  "quickImport": "Importer",
+  "seeAll": "Tout voir",
+  "emptyComment": "Aucun commentaire pour le moment.",
+  "teacherNote": "Mot de l'enseignante",
+  "noValue": "—",
+  "releaseBadge": "Version {number}",
+  "@releaseBadge": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "comingPlanning": "Calendrier de la semaine, séances récurrentes, liens Meet et présences.",
+  "comingStudents": "Élèves, parents, groupes et cours particuliers, avec leurs identifiants.",
+  "comingAssignments": "Devoirs, rendus des élèves et file de correction.",
+  "comingAnnouncements": "Annonces aux groupes, aux élèves et aux parents.",
+  "comingStudentAssignments": "Vos devoirs, quiz et séries, avec leur date limite.",
+  "comingStudentPlanning": "Vos prochaines séances, en présentiel ou en ligne.",
+  "comingResults": "Vos notes, les commentaires et votre progression.",
+  "comingParentPlanning": "Les prochaines séances de votre enfant.",
+  "daySessions": "{count, plural, =0{0 séance} =1{1 séance} other{{count} séances}}",
+  "@daySessions": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "childThisWeek": "{name} cette semaine",
+  "@childThisWeek": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "average": "Moyenne",
+  "lastGrade": "Dernière note",
+  "notYet": "Pas encore",
+  "retry": "Réessayer",
+  "add": "Ajouter",
+  "edit": "Modifier",
+  "close": "Fermer",
+  "back": "Retour",
+  "delete": "Supprimer",
+  "optional": "facultatif",
+  "copy": "Copier",
+  "copied": "Copié.",
+  "listSeparator": ", ",
+  "dotSeparator": " · ",
+  "savedChanges": "Modifications enregistrées.",
+  "noResults": "Aucun résultat.",
+  "percentValue": "{value} %",
+  "@percentValue": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "timeRange": "{start} à {end}",
+  "@timeRange": {
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
+  "untilTime": "jusqu'à {time}",
+  "@untilTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "inDuration": "dans {duration}",
+  "@inDuration": {
+    "placeholders": {
+      "duration": {
+        "type": "String"
+      }
+    }
+  },
+  "durationHoursMinutes": "{hours} h {minutes}",
+  "@durationHoursMinutes": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "durationHours": "{hours} h",
+  "@durationHours": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "durationMinutes": "{minutes} min",
+  "@durationMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "todayDate": "Aujourd'hui, {date}",
+  "@todayDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "tomorrowDate": "Demain, {date}",
+  "@tomorrowDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "everyWeekday": "Chaque {weekday}",
+  "@everyWeekday": {
+    "placeholders": {
+      "weekday": {
+        "type": "String"
+      }
+    }
+  },
+  "statusPlanned": "Prévue",
+  "statusInProgress": "En cours",
+  "statusDone": "Terminée",
+  "statusCancelled": "Annulée",
+  "statusNext": "Prochaine",
+  "modeInPerson": "Présentiel",
+  "modeOnline": "En ligne",
+  "attendancePresent": "Présent",
+  "attendanceAbsent": "Absent",
+  "attendanceLate": "En retard",
+  "presentCount": "{count, plural, =0{0 présent} =1{1 présent} other{{count} présents}}",
+  "@presentCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "absentCount": "{count, plural, =0{0 absent} =1{1 absent} other{{count} absents}}",
+  "@absentCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "lateCount": "{count, plural, =0{0 en retard} =1{1 en retard} other{{count} en retard}}",
+  "@lateCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "absencesCount": "{count, plural, =0{Aucune absence} =1{1 absence} other{{count} absences}}",
+  "@absencesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "studentsCount": "{count, plural, =0{Aucun élève} =1{1 élève} other{{count} élèves}}",
+  "@studentsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "groupsCount": "{count, plural, =0{aucun groupe} =1{1 groupe} other{{count} groupes}}",
+  "@groupsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "privateLessonsCount": "{count, plural, =0{aucun cours particulier} =1{1 cours particulier} other{{count} cours particuliers}}",
+  "@privateLessonsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sessionsCount": "{count, plural, =0{Aucune séance} =1{1 séance} other{{count} séances}}",
+  "@sessionsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "tabGroups": "Groupes",
+  "tabPrivateLessons": "Cours particuliers",
+  "tabArchived": "Archivés",
+  "studentsYearSummary": "{students}, {groups} et {lessons} cette année.",
+  "@studentsYearSummary": {
+    "placeholders": {
+      "students": {
+        "type": "String"
+      },
+      "groups": {
+        "type": "String"
+      },
+      "lessons": {
+        "type": "String"
+      }
+    }
+  },
+  "newStudent": "Nouvel élève",
+  "newGroup": "Nouveau groupe",
+  "searchStudents": "Nom, identifiant, téléphone",
+  "levelAll": "Niveau : tous",
+  "levelFilter": "Niveau : {level}",
+  "@levelFilter": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "columnStudent": "Élève",
+  "columnGroups": "Groupes",
+  "columnParent": "Parent",
+  "columnAttendance": "Présence",
+  "noParent": "Aucun parent",
+  "noGroup": "Aucun groupe",
+  "emptyStudents": "Aucun élève pour le moment. Ajoutez le premier.",
+  "emptyArchived": "Aucun élève archivé.",
+  "emptyGroups": "Aucun groupe pour le moment. Créez le premier.",
+  "emptyPrivateLessons": "Aucun cours particulier. Créez-en un depuis la fiche d'un élève.",
+  "restore": "Restaurer",
+  "noSchedule": "Aucun horaire habituel",
+  "addStudentsHint": "Ajoutez des élèves",
+  "privateLesson": "Cours particulier",
+  "studentFormSubtitle": "Ses identifiants s'affichent après l'enregistrement.",
+  "editStudent": "Modifier l'élève",
+  "firstName": "Prénom",
+  "lastName": "Nom",
+  "level": "Niveau",
+  "chooseLevel": "Choisir un niveau",
+  "phone": "Téléphone",
+  "phoneHint": "8 chiffres",
+  "phoneInvalid": "Le numéro doit contenir 8 chiffres.",
+  "username": "Identifiant",
+  "usernameHint": "Créé à partir du prénom et du nom. Vous pouvez le changer.",
+  "usernameAvailable": "Disponible",
+  "usernameTaken": "Déjà utilisé",
+  "groups": "Groupes",
+  "addGroup": "Ajouter un groupe",
+  "parents": "Parents",
+  "parentsCount": "{count} sur 2",
+  "@parentsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "existingParent": "Parent existant",
+  "newParent": "Nouveau parent",
+  "relation": "Lien",
+  "relationMother": "mère",
+  "relationFather": "père",
+  "relationGuardian": "tuteur",
+  "email": "Email",
+  "newAccount": "Nouveau compte",
+  "searchParent": "Rechercher un parent",
+  "parentOf": "Parent de {names}",
+  "@parentOf": {
+    "placeholders": {
+      "names": {
+        "type": "String"
+      }
+    }
+  },
+  "noParentsYet": "Aucun parent enregistré pour l'instant.",
+  "parentLinked": "Déjà lié",
+  "credentialsTitle": "Identifiants créés",
+  "credentialsSubtitle": "Envoyez-les maintenant : les mots de passe ne seront plus affichés.",
+  "resetPasswordTitle": "Nouveau mot de passe temporaire",
+  "credentialUsername": "Identifiant",
+  "credentialPassword": "Mot de passe temporaire",
+  "copyMessage": "Copier le message",
+  "credentialsNote": "Chacun choisira son propre mot de passe à la première connexion. En cas d'oubli : Fiche élève, Réinitialiser le mot de passe.",
+  "credentialsDone": "J'ai envoyé les identifiants",
+  "parentLoginNote": "se connecte avec son téléphone",
+  "credentialsMessage": "Bonjour {name}, voici vos accès à {app}.\nIdentifiant : {username}\nMot de passe temporaire : {password}\nVous choisirez votre propre mot de passe à la première connexion.",
+  "@credentialsMessage": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "app": {
+        "type": "String"
+      },
+      "username": {
+        "type": "String"
+      },
+      "password": {
+        "type": "String"
+      }
+    }
+  },
+  "active": "Actif",
+  "archivedStatus": "Archivé",
+  "usernameInline": "identifiant {username}",
+  "@usernameInline": {
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    }
+  },
+  "lastLogin": "dernière connexion {when}",
+  "@lastLogin": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "neverLoggedIn": "jamais connecté",
+  "resetPassword": "Réinitialiser le mot de passe",
+  "archive": "Archiver",
+  "archiveStudentTitle": "Archiver {name} ?",
+  "@archiveStudentTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "archiveStudentText": "Il ne pourra plus se connecter et disparaîtra des listes. Rien n'est supprimé : vous pourrez le restaurer.",
+  "studentArchived": "{name} est archivé.",
+  "@studentArchived": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "studentRestored": "{name} est de retour.",
+  "@studentRestored": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "resetPasswordConfirm": "{name} devra choisir un nouveau mot de passe. Ses appareils seront déconnectés.",
+  "@resetPasswordConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "statAttendance": "Présence cette année",
+  "statLate": "Retards",
+  "statSessions": "Séances comptées",
+  "sinceSeptember": "depuis septembre",
+  "nextSessions": "Prochaines séances",
+  "noUpcoming": "Aucune séance prévue.",
+  "attendanceTitle": "Présences",
+  "lastTenSessions": "10 dernières séances",
+  "noAttendanceYet": "Pas encore de présence enregistrée.",
+  "commentsTitle": "Commentaires",
+  "commentsVisibility": "Visible par l'élève et ses parents",
+  "commentHint": "Un mot pour l'élève et ses parents…",
+  "privateNotesTitle": "Notes privées",
+  "privateNotesVisibility": "Visible par vous uniquement",
+  "noPrivateNotes": "Aucune note privée.",
+  "noteHint": "Écrivez votre note…",
+  "deleteNoteTitle": "Supprimer cette note ?",
+  "createPrivateLesson": "Créer un cours particulier",
+  "privateLessonText": "Un groupe pour {name} seul, dans la matière choisie.",
+  "@privateLessonText": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "privateLessonCreated": "Cours particulier créé.",
+  "subject": "Matière",
+  "chooseSubject": "Choisir une matière",
+  "groupName": "Nom du groupe",
+  "groupNameHint": "Ex. : 4ème année · Maths",
+  "groupFormSubtitle": "Vous ajouterez les élèves et l'horaire ensuite.",
+  "editGroup": "Modifier le groupe",
+  "color": "Couleur",
+  "defaultMeetLink": "Lien Meet par défaut",
+  "meetLinkHint": "https://meet.google.com/…",
+  "meetLinkInvalid": "Le lien doit commencer par https://",
+  "addMembers": "Ajouter des élèves",
+  "groupMembersTitle": "Élèves du groupe",
+  "usualSchedule": "Horaire habituel",
+  "scheduleNote": "Séances créées jusqu'au {date}. Une séance se modifie seule ou avec les suivantes.",
+  "@scheduleNote": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "noScheduleYet": "Pas d'horaire habituel. Planifiez une séance et cochez Répéter chaque semaine.",
+  "noMeetLink": "Aucun lien. Les séances sont en présentiel.",
+  "archiveGroup": "Archiver le groupe",
+  "archiveGroupText": "Le groupe disparaît des listes. Ses séances passées restent dans l'historique des élèves.",
+  "groupArchived": "Groupe archivé.",
+  "noMembers": "Aucun élève dans ce groupe.",
+  "chooseStudents": "Choisir les élèves",
+  "selectedCount": "{count} sélectionnés",
+  "@selectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "saveMembers": "Enregistrer",
+  "viewDay": "Jour",
+  "viewWeek": "Semaine",
+  "previous": "Précédent",
+  "next": "Suivant",
+  "allGroups": "Tous les groupes",
+  "newSession": "Nouvelle séance",
+  "planningLegend": "Atténuée : terminée · Barrée : annulée · Cliquez sur un créneau vide pour ajouter une séance",
+  "emptyWeek": "Aucune séance cette semaine.",
+  "emptyDay": "Aucune séance ce jour-là.",
+  "editSession": "Modifier la séance",
+  "group": "Groupe",
+  "chooseGroup": "Choisir un groupe",
+  "date": "Date",
+  "startTime": "Début",
+  "endTime": "Fin",
+  "mode": "Mode",
+  "location": "Lieu",
+  "locationHint": "Ex. : Salle 2",
+  "meetLink": "Lien visio",
+  "fromGroup": "Du groupe",
+  "repeatWeekly": "Répéter chaque semaine",
+  "repeatWeeklyHint": "Chaque {weekday} jusqu'au {date}",
+  "@repeatWeeklyHint": {
+    "placeholders": {
+      "weekday": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "repeatUntil": "Jusqu'au",
+  "sessionsToCreate": "Séances créées",
+  "createSessions": "{count, plural, =0{Créer} =1{Créer la séance} other{Créer {count} séances}}",
+  "@createSessions": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "overlapWarning": "Chevauche une séance : {session}. Vous pouvez continuer.",
+  "@overlapWarning": {
+    "placeholders": {
+      "session": {
+        "type": "String"
+      }
+    }
+  },
+  "prepNotes": "Notes de préparation",
+  "prepNotesHint": "Ce que vous voulez revoir…",
+  "timeRangeInvalid": "L'heure de fin doit être après l'heure de début.",
+  "noGroupsYet": "Créez d'abord un groupe dans Élèves.",
+  "sessionsCreated": "{count, plural, =0{Aucune séance créée.} =1{Séance créée.} other{{count} séances créées.}}",
+  "@sessionsCreated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sessionUpdated": "Séance modifiée.",
+  "startSession": "Démarrer la séance",
+  "resumeSession": "Reprendre la séance",
+  "openMeet": "Ouvrir Meet",
+  "everyWeekdayUntil": "Chaque {weekday}, jusqu'au {date}",
+  "@everyWeekdayUntil": {
+    "placeholders": {
+      "weekday": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "cancelSession": "Annuler la séance",
+  "restoreSession": "Rétablir la séance",
+  "cancelledBecause": "Motif : {reason}",
+  "@cancelledBecause": {
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      }
+    }
+  },
+  "seriesNote": "Cette séance fait partie d'une série.",
+  "scopeOne": "Cette séance uniquement",
+  "scopeFollowing": "Cette séance et les suivantes",
+  "scopeFollowingCount": "{count} jusqu'au {date}",
+  "@scopeFollowingCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "cancelReason": "Motif",
+  "cancelReasonVisibility": "affiché à l'élève et à ses parents",
+  "cancelReasonHint": "Ex. : examen au lycée",
+  "cancelVisibleNote": "Les élèves et leurs parents sont prévenus dans l'application et voient le motif dans leur planning.",
+  "sessionCancelled": "Séance annulée.",
+  "sessionRestored": "Séance rétablie.",
+  "editAttendance": "Modifier les présences",
+  "inProgressFor": "En cours · {minutes} min",
+  "@inProgressFor": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "endSession": "Terminer la séance",
+  "tapToChange": "Touchez un élève pour changer",
+  "contentOfDay": "Contenu du jour",
+  "lastSessionOn": "Dernière séance · {day}",
+  "@lastSessionOn": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      }
+    }
+  },
+  "noPreviousNote": "Pas de note sur la dernière séance.",
+  "quickNote": "Note rapide",
+  "quickNoteHint": "Ce qui s'est passé, à revoir la prochaine fois…",
+  "noteSaved": "Enregistrée",
+  "noteSaving": "Enregistrement…",
+  "endSessionTitle": "Terminer la séance ?",
+  "endSessionText": "Présences enregistrées : {summary}.",
+  "@endSessionText": {
+    "placeholders": {
+      "summary": {
+        "type": "String"
+      }
+    }
+  },
+  "sessionEnded": "Séance terminée.",
+  "joinSession": "Rejoindre la séance",
+  "childSessions": "Séances de {name}",
+  "@childSessions": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "thisWeek": "Cette semaine",
+  "cancelledCount": "{count, plural, =0{Aucune annulée} =1{1 annulée} other{{count} annulées}}",
+  "@cancelledCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "absencesThisMonth": "{count, plural, =0{Aucune absence ce mois} =1{1 absence ce mois} other{{count} absences ce mois}}",
+  "@absencesThisMonth": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "emptyMyPlanning": "Aucune séance dans les deux prochaines semaines.",
+  "todayInDuration": "Aujourd'hui, dans {duration}",
+  "@todayInDuration": {
+    "placeholders": {
+      "duration": {
+        "type": "String"
+      }
+    }
+  },
+  "homeSessionsToday": "{count, plural, =0{Aucune séance aujourd'hui.} =1{1 séance aujourd'hui.} other{{count} séances aujourd'hui.}}",
+  "@homeSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "tomorrowSessions": "{count, plural, =0{Demain : aucune séance.} =1{Demain : 1 séance, à {time}.} other{Demain : {count} séances, la première à {time}.}}",
+  "@tomorrowSessions": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "attendanceOf": "présences {present} sur {total}",
+  "@attendanceOf": {
+    "placeholders": {
+      "present": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "childAccess": "Accès de l'élève",
+  "childAccessHint": "Facultatif. Les élèves du primaire n'en ont souvent pas besoin : leurs parents suivent tout.",
+  "createChildAccess": "Créer un accès",
+  "removeChildAccess": "Retirer l'accès",
+  "removeChildAccessText": "{name} ne pourra plus se connecter. Ses parents continuent de tout suivre.",
+  "@removeChildAccessText": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "childAccessRemoved": "Accès retiré.",
+  "noChildAccess": "sans accès, suivi par ses parents",
+  "newSubject": "Nouvelle matière",
+  "subjectNameFr": "Nom en français",
+  "subjectNameAr": "Nom en arabe",
+  "subjectNameHint": "Ex. : Mathématiques, Lecture, Éveil scientifique",
+  "subjectNameArHint": "S'il est vide, le nom français est affiché.",
+  "subjectCreated": "Matière créée.",
+  "settingsSubtitle": "Les matières que vous enseignez, vos niveaux et l'année scolaire.",
+  "yourSubjects": "Vos matières",
+  "subjectNoArabicName": "Pas de nom arabe : le nom français est affiché",
+  "subjectInUse": "Utilisée par un groupe : elle ne peut pas être supprimée.",
+  "subjectDeleteRule": "Une matière utilisée par un groupe ne peut pas être supprimée : changez d'abord la matière du groupe.",
+  "editSubject": "Modifier la matière",
+  "subjectUpdated": "Matière modifiée.",
+  "deleteSubjectTitle": "Supprimer {name} ?",
+  "@deleteSubjectTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteSubjectText": "Aucun groupe ne l'utilise. Cette suppression est définitive.",
+  "subjectDeleted": "Matière supprimée.",
+  "levelsTitle": "Niveaux",
+  "primarySchool": "Primaire",
+  "levelsNote": "Les six années du primaire tunisien, en français et en arabe.",
+  "schoolYearTitle": "Année scolaire",
+  "schoolYearRange": "du {start} au {end}",
+  "@schoolYearRange": {
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
+  "noSubjectsYet": "Aucune matière pour l'instant. Créez la première.",
+  "loginIdentifierHint": "Identifiant ou numéro",
+  "loginPasswordHint": "Votre mot de passe",
+  "notificationsUnread": "{count, plural, =0{Tout est lu} =1{1 non lue} other{{count} non lues}}",
+  "@notificationsUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "markAllRead": "Tout marquer comme lu",
+  "notificationsToday": "Aujourd'hui",
+  "notificationsEarlier": "Plus tôt",
+  "notificationCancelled": "{count, plural, =0{Aucune séance annulée} =1{Séance annulée} other{{count} séances annulées}}",
+  "@notificationCancelled": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "notificationMoved": "{count, plural, =0{Aucune séance déplacée} =1{Séance déplacée} other{{count} séances déplacées}}",
+  "@notificationMoved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "notificationRestored": "Séance rétablie",
+  "fromDate": "À partir du {date}",
+  "@fromDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "minutesAgo": "{count, plural, =0{À l'instant} =1{Il y a 1 min} other{Il y a {count} min}}",
+  "@minutesAgo": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "hoursAgo": "{count, plural, =0{À l'instant} =1{Il y a 1 h} other{Il y a {count} h}}",
+  "@hoursAgo": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "yesterday": "Hier",
+  "noNotifications": "Aucune notification pour le moment.",
+  "noNotificationsHint": "Vous serez prévenu ici si une séance est annulée, déplacée ou rétablie.",
+  "familiesWillBeTold": "Si la date ou l'heure change, les élèves et les parents seront prévenus dans l'application.",
+  "modeInClass": "En classe",
+  "weekSummary": "{count, plural, =0{Plus de séance cette semaine.} =1{Cette semaine, il te reste 1 séance.} other{Cette semaine, il te reste {count} séances.}}",
+  "@weekSummary": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "whatsNew": "Du nouveau",
+  "myWeek": "Ma semaine",
+  "seePlanning": "Voir le planning",
+  "legendSession": "Séance",
+  "nextWeekSessions": "{count, plural, =0{Pas de séance la semaine prochaine.} =1{La semaine prochaine : 1 séance.} other{La semaine prochaine : {count} séances.}}",
+  "@nextWeekSessions": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "nextWeek": "Semaine prochaine",
+  "laterOn": "Plus tard",
+  "tomorrowWeekday": "Demain, {weekday}",
+  "@tomorrowWeekday": {
+    "placeholders": {
+      "weekday": {
+        "type": "String"
+      }
+    }
+  },
+  "newTime": "Nouvel horaire",
+  "previousTime": "Avant : {when}",
+  "@previousTime": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "dayAtTime": "{day} à {time}",
+  "@dayAtTime": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "joinOpensBefore": "Le lien pour rejoindre apparaît 15 min avant.",
+  "noNotificationsHintStudent": "Tu seras prévenu ici si une séance est annulée, déplacée ou rétablie.",
+  "roleAdmin": "Administrateur",
+  "navTeachers": "Enseignants",
+  "adminArea": "Administration",
+  "teachersSubtitle": "Chaque enseignant travaille dans son propre espace, avec ses élèves et leurs parents.",
+  "newTeacher": "Nouvel enseignant",
+  "teachersCount": "{count, plural, =0{Aucun enseignant} =1{1 enseignant} other{{count} enseignants}}",
+  "@teachersCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "activeAccounts": "{count, plural, =0{Aucun compte actif} =1{1 compte actif} other{{count} comptes actifs}}",
+  "@activeAccounts": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statStudents": "Élèves suivis",
+  "statParents": "Comptes parents",
+  "statGroups": "Groupes en cours",
+  "allSpaces": "Tous les espaces",
+  "searchTeachers": "Nom, identifiant, téléphone",
+  "columnTeacher": "Enseignant",
+  "columnStatus": "Statut",
+  "columnStudents": "Élèves",
+  "columnLastLogin": "Dernière connexion",
+  "teacherActive": "Actif",
+  "teacherTemporaryPassword": "Mot de passe temporaire",
+  "teacherDisabled": "Désactivé",
+  "lastLoginNever": "Jamais connecté",
+  "teacherActions": "Actions",
+  "disableAccess": "Désactiver l'accès",
+  "enableAccess": "Réactiver l'accès",
+  "disableTeacherTitle": "Désactiver l'accès de {name} ?",
+  "@disableTeacherTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "disableTeacherText": "La connexion à ce compte sera bloquée. Ses élèves et leurs parents gardent leur accès. Rien n'est supprimé : vous pourrez le réactiver.",
+  "teacherDisabledNotice": "Accès de {name} désactivé.",
+  "@teacherDisabledNotice": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "teacherEnabledNotice": "Accès de {name} réactivé.",
+  "@teacherEnabledNotice": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "newTeacherSubtitle": "Un identifiant et un mot de passe temporaire sont créés pour la première connexion.",
+  "teacherUsernameHint": "Pour se connecter. Le téléphone sert aussi, s'il est indiqué.",
+  "usernameRule": "3 caractères au moins : lettres sans accent, chiffres, point, tiret.",
+  "createTeacherAccount": "Créer le compte",
+  "noTeachers": "Aucun enseignant pour le moment.",
+  "noTeachersHint": "Ajoutez le premier : un identifiant et un mot de passe temporaire lui sont donnés.",
+  "teacherCredentialsNote": "Le mot de passe temporaire n'est montré qu'une fois. L'enseignant choisit le sien à la première connexion. En cas d'oubli : Actions, Réinitialiser le mot de passe.",
+  "studentFirstNameHint": "Ex. : Adam",
+  "parentFirstNameHint": "Ex. : Mouna",
+  "teacherFirstNameHint": "Ex. : Sonia",
+  "lastNameHint": "Ex. : Gharbi",
+  "teacherLastNameHint": "Ex. : Ben Ali",
+  "studentUsernameExample": "Ex. : adam.gharbi",
+  "teacherUsernameExample": "Ex. : sonia.benali",
+  "emailHint": "Ex. : nom@exemple.com",
+  "subjectNameArExample": "مثال: الرياضيات",
+  "relationHint": "Mère, père, tuteur",
+  "temporaryPasswordHint": "Le mot de passe reçu",
+  "currentPasswordHint": "Celui utilisé pour se connecter",
+  "newPasswordHint": "Facile à retenir, difficile à deviner",
+  "confirmPasswordHint": "Le même, une seconde fois",
+  "contentsSubtitle": "Vos documents, rangés par matière, niveau et chapitre.",
+  "newChapter": "Nouveau chapitre",
+  "importDocument": "Importer un document",
+  "importShort": "Importer",
+  "shareChapter": "Partager le chapitre",
+  "unfiled": "Sans chapitre",
+  "searchTitle": "Rechercher un titre",
+  "tagAll": "Étiquette : toutes",
+  "tagFilter": "Étiquette : {tag}",
+  "@tagFilter": {
+    "placeholders": {
+      "tag": {
+        "type": "String"
+      }
+    }
+  },
+  "statusAll": "Statut : tous",
+  "statusFilter": "Statut : {status}",
+  "@statusFilter": {
+    "placeholders": {
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "documentsCount": "{count, plural, =0{Aucun document} =1{1 document} other{{count} documents}}",
+  "@documentsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pagesCount": "{count, plural, =0{Aucune page} =1{1 page} other{{count} pages}}",
+  "@pagesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "columnDocument": "Document",
+  "columnTag": "Étiquette",
+  "columnSharedWith": "Partagé avec",
+  "columnEdited": "Modifié",
+  "notShared": "Non partagé",
+  "tagSerie": "Série",
+  "tagCours": "Cours",
+  "tagCorrige": "Corrigé",
+  "tagAutre": "Autre",
+  "statusPublished": "Publié",
+  "statusDraft": "Brouillon",
+  "kindPdf": "PDF",
+  "kindImage": "Photo",
+  "kindWord": "Word",
+  "toDownload": "à télécharger",
+  "sizeKb": "{value} Ko",
+  "@sizeKb": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "sizeMb": "{value} Mo",
+  "@sizeMb": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "actionOpen": "Ouvrir",
+  "actionShare": "Partager",
+  "actionEditDetails": "Modifier les détails",
+  "renameChapter": "Renommer le chapitre",
+  "deleteChapter": "Supprimer le chapitre",
+  "documentActions": "Actions sur le document",
+  "chapterActions": "Actions sur le chapitre",
+  "archiveDocumentTitle": "Archiver « {title} » ?",
+  "@archiveDocumentTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "archiveDocumentText": "Il disparaît de la bibliothèque et des onglets Cours. Rien n'est supprimé.",
+  "deleteChapterTitle": "Supprimer le chapitre « {title} » ?",
+  "@deleteChapterTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteChapterText": "Ses documents restent, dans « Sans chapitre ». Le partage du chapitre s'arrête.",
+  "documentArchived": "Document archivé.",
+  "chapterDeleted": "Chapitre supprimé.",
+  "documentUploaded": "Document importé.",
+  "detailsSaved": "Modifications enregistrées.",
+  "shareSaved": "Partage enregistré.",
+  "libraryEmptyTitle": "Votre bibliothèque est vide.",
+  "libraryEmptyHint": "Importez une série, une leçon ou une photo du tableau, puis partagez-la avec un groupe.",
+  "chapterEmpty": "Aucun document dans ce chapitre.",
+  "subjectEmpty": "Aucun document dans cette matière pour l'instant.",
+  "draftCannotShare": "Un brouillon ne peut pas être partagé. Publiez-le d'abord.",
+  "importSubtitle": "PDF, photo ou Word, ou des feuilles à scanner. Il est rangé dans un chapitre, puis partagé quand vous voulez.",
+  "editDetailsSubtitle": "Titre, rangement, étiquette et statut.",
+  "chooseFile": "Choisir un fichier",
+  "changeFile": "Changer",
+  "fileUnsupported": "Format non accepté : choisissez un PDF, une photo JPG ou PNG, ou un fichier Word.",
+  "fileTooLarge": "Ce fichier dépasse 20 Mo.",
+  "fileEmpty": "Ce fichier est vide.",
+  "fileRequired": "Choisissez un fichier.",
+  "documentTitle": "Titre",
+  "documentTitleHint": "Ex. : Série 2 : les fractions",
+  "documentTitleHelper": "Les élèves voient ce titre.",
+  "chapter": "Chapitre",
+  "tag": "Étiquette",
+  "shareWith": "Partager avec",
+  "shareWithHint": "Les élèves de ces groupes le voient dans Cours. Vous pourrez partager plus tard.",
+  "keepDraft": "Garder en brouillon",
+  "keepDraftHint": "Un brouillon n'est jamais visible par les élèves.",
+  "uploadProgress": "Envoi : {percent} %",
+  "@uploadProgress": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "chapterTitle": "Titre du chapitre",
+  "chapterTitleHint": "Ex. : Les fractions",
+  "shareDocumentTitle": "Partager « {title} »",
+  "@shareDocumentTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "shareChapterTitle": "Partager le chapitre « {title} »",
+  "@shareChapterTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "shareSubtitle": "Les élèves des groupes cochés le voient dans leur onglet Cours.",
+  "shareChapterSubtitle": "Tous ses documents publiés, et ceux ajoutés ensuite.",
+  "groupsOfLevel": "Groupes de {level}",
+  "@groupsOfLevel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "otherGroups": "Autres groupes",
+  "unshareNote": "Décocher un groupe retire le document de son onglet Cours. Rien n'est supprimé.",
+  "download": "Télécharger",
+  "pageOf": "Page {page} sur {count}",
+  "@pageOf": {
+    "placeholders": {
+      "page": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "previousPage": "Page précédente",
+  "nextPage": "Page suivante",
+  "zoomIn": "Agrandir",
+  "zoomOut": "Réduire",
+  "details": "Détails",
+  "detailFile": "Fichier",
+  "wordNoPreview": "Un fichier Word ne s'ouvre pas dans l'application. Téléchargez-le pour le lire.",
+  "downloadFailed": "Le téléchargement n'a pas pu démarrer.",
+  "pageNotShown": "Cette page ne s'affiche pas.",
+  "myCoursesTitle": "Mes cours",
+  "myCoursesSubtitle": "Ce qui a été partagé avec toi, par matière.",
+  "parentCoursesTitle": "Cours pour {name}",
+  "@parentCoursesTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "parentCoursesSubtitle": "Les documents partagés avec {name}. Vous pouvez les ouvrir et les imprimer.",
+  "@parentCoursesSubtitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "allSubjects": "Tout",
+  "newBadge": "Nouveau",
+  "coursEmpty": "Rien n'est encore partagé avec toi.",
+  "coursEmptyParent": "Rien n'est encore partagé avec {name}.",
+  "@coursEmptyParent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "scanSheets": "Scanner des feuilles",
+  "scanSheetsHint": "Plusieurs pages, un seul PDF",
+  "fileTypesShort": "PDF, JPG, PNG, Word",
+  "takePhoto": "Prendre une photo",
+  "fromGallery": "Depuis la galerie",
+  "addPhotos": "Ajouter des photos",
+  "scanHint": "Posez la feuille à plat, bien éclairée. Appuyez sur une page pour la recadrer ou la pivoter, maintenez-la pour la déplacer.",
+  "scanColor": "Couleur",
+  "scanBlackWhite": "Noir et blanc",
+  "createPdf": "Créer le PDF",
+  "scanEmptyTitle": "Prenez la première feuille en photo.",
+  "scanEmptyHint": "Une photo par feuille. Vous pourrez recadrer, pivoter et changer l'ordre.",
+  "scanPreparing": "Préparation…",
+  "scanDiscardTitle": "Abandonner le scan ?",
+  "scanDiscardText": "Les photos prises ici seront perdues.",
+  "scanDiscard": "Abandonner",
+  "rotate": "Pivoter",
+  "resetCrop": "Rétablir",
+  "validate": "Valider",
+  "deletePage": "Supprimer la page",
+  "cropHint": "Faites glisser les coins sur les bords de la feuille.",
+  "scanFileName": "Scan du {date}",
+  "@scanFileName": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "scanPhotoFailed": "Une photo n'a pas pu être lue.",
+  "scanPdfFailed": "Le PDF n'a pas pu être créé.",
+  "pageNumber": "Page {number}",
+  "@pageNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "cropCorner": "Coin de la feuille",
+  "scanEmptyTitleComputer": "Ajoutez les photos de vos feuilles.",
+  "scanEmptyHintComputer": "Choisissez les photos déjà prises, une par feuille. Vous pourrez recadrer, pivoter et changer l'ordre.",
+  "homeworkSubtitle": "Ce que vos élèves ont à faire, et qui l'a rendu.",
+  "newHomework": "Nouveau devoir",
+  "homeworkOpen": "En cours",
+  "homeworkDone": "Terminés",
+  "groupAll": "Groupe : tous",
+  "groupFilter": "Groupe : {name}",
+  "@groupFilter": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "columnHomework": "Devoir",
+  "columnDueFor": "Pour le",
+  "columnSent": "Rendus",
+  "sentOf": "{count, plural, =0{Aucun rendu sur {total}} =1{1 rendu sur {total}} other{{count} rendus sur {total}}}",
+  "@sentOf": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "missingCount": "{count, plural, =0{Aucun manquant} =1{1 manquant} other{{count} manquants}}",
+  "@missingCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "nothingToSubmit": "Rien à rendre",
+  "toRead": "À lire",
+  "dueToday": "Aujourd'hui, {time}",
+  "@dueToday": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "dueTomorrow": "Demain, {time}",
+  "@dueTomorrow": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "dueOn": "{date}, {time}",
+  "@dueOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "inDays": "{count, plural, =0{aujourd'hui} =1{demain} other{dans {count} jours}}",
+  "@inDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysAgo": "{count, plural, =0{aujourd'hui} =1{hier} other{il y a {count} jours}}",
+  "@daysAgo": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "homeworkInfo": "Après la date limite, un devoir non rendu passe en « Manquant » tout seul. Les élèves et leurs parents voient chaque nouveau devoir dans leurs notifications.",
+  "homeworkEmpty": "Aucun devoir en cours.",
+  "homeworkEmptyHint": "Donnez un document de vos Contenus à un groupe, avec une date limite.",
+  "homeworkDoneEmpty": "Aucun devoir terminé pour l'instant.",
+  "newHomeworkSubtitle": "Un document de la bibliothèque, pour un groupe ou quelques élèves, avec une date limite.",
+  "documentLabel": "Document",
+  "chooseDocument": "Choisir un document",
+  "noPublishedDocuments": "Importez d'abord un document dans Contenus.",
+  "homeworkTitleHelper": "Pris du document. Les élèves voient ce titre.",
+  "forLabel": "Pour",
+  "forGroup": "Un groupe",
+  "forStudents": "Des élèves",
+  "pickStudentsRequired": "Cochez au moins un élève.",
+  "deadlineDate": "Date limite",
+  "deadlineTime": "Heure",
+  "deadlineInPast": "Choisissez une date limite à venir.",
+  "submissionLabel": "Rendu",
+  "modeFile": "Photos ou PDF",
+  "modeNone": "Rien à rendre",
+  "modeFileHint": "Les élèves prennent leur cahier en photo : les pages deviennent un seul PDF.",
+  "modeNoneHint": "Un document à lire, sans statut.",
+  "instructionsLabel": "Consignes",
+  "instructionsHint": "Ex. : Fais les exercices 1 à 3 sur ton cahier.",
+  "allowLate": "Accepter les rendus en retard",
+  "allowLateHint": "Ils sont marqués « Rendu en retard ».",
+  "giveHomework": "Donner le devoir",
+  "homeworkGiven": "Devoir donné.",
+  "giveAsHomework": "Donner en devoir",
+  "hwStatusTodo": "À faire",
+  "hwStatusSubmitted": "Rendu",
+  "hwStatusLate": "Rendu en retard",
+  "hwStatusMissing": "Manquant",
+  "hwStatusCorrected": "Corrigé",
+  "tileSubmitted": "Rendus",
+  "tileLate": "Rendus en retard",
+  "tileMissing": "Manquants",
+  "tileTodo": "À faire",
+  "columnSentAt": "Rendu le",
+  "viewWork": "Voir le rendu",
+  "nothingReceived": "Rien reçu",
+  "changeDeadline": "Changer la date",
+  "closeHomework": "Clore",
+  "closeHomeworkTitle": "Clore « {title} » ?",
+  "@closeHomeworkTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "closeHomeworkText": "Plus aucun travail ne pourra être envoyé. Ce qui a été envoyé reste.",
+  "homeworkClosed": "Devoir clos.",
+  "deadlineChanged": "Date limite changée.",
+  "lateAccepted": "Retard accepté",
+  "closedChip": "Clos",
+  "dueFor": "Pour le {when}",
+  "@dueFor": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "newDeadline": "Nouvelle date limite",
+  "myHomeworkTitle": "Mes devoirs",
+  "myHomeworkSubtitle": "Ce que tu as à faire, le plus pressé en premier.",
+  "parentHomeworkTitle": "Devoirs pour {name}",
+  "@parentHomeworkTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "parentHomeworkSubtitle": "Ce que {name} a à faire, et ce qui a été envoyé.",
+  "@parentHomeworkSubtitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "sectionTodo": "À faire",
+  "sectionDone": "Terminés",
+  "dueLabel": "Pour {when}",
+  "@dueLabel": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "sentOn": "Rendu {when}",
+  "@sentOn": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "readBefore": "À lire avant {when}",
+  "@readBefore": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "myHomeworkEmpty": "Aucun devoir pour l'instant.",
+  "parentHomeworkEmpty": "Aucun devoir pour {name} pour l'instant.",
+  "@parentHomeworkEmpty": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yourWork": "Ton travail",
+  "childWork": "Le travail de {name}",
+  "@childWork": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "workPhotosHint": "Une photo par page du cahier : elles deviennent un seul PDF.",
+  "takeMyWork": "Prendre mon travail en photo",
+  "takeTheWork": "Prendre le travail en photo",
+  "orChooseFile": "Ou choisir un fichier",
+  "replaceMyWork": "Remplacer mon travail",
+  "replaceTheWork": "Remplacer le travail",
+  "workSent": "C'est envoyé !",
+  "myWork": "Mon travail",
+  "sentWork": "Travail envoyé",
+  "canReplaceUntilTu": "Tu peux le remplacer jusqu'à {when}.",
+  "@canReplaceUntilTu": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "canReplaceUntil": "Vous pouvez le remplacer jusqu'à {when}.",
+  "@canReplaceUntil": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "deadlinePassedNotice": "La date limite est passée : le devoir ne peut plus être envoyé.",
+  "closedNotice": "Ce devoir est clos.",
+  "readOnlyNotice": "Rien à rendre : il suffit de lire le document.",
+  "missingNotice": "Rien n'a été envoyé avant la date limite.",
+  "lateSentNotice": "Envoyé après la date limite.",
+  "workSentNotice": "Travail envoyé.",
+  "notificationHomework": "Nouveau devoir",
+  "workFileUnsupported": "Format non accepté : envoyez un PDF ou une photo JPG ou PNG.",
+  "submissionInfo": "« Voir le rendu » ouvre le travail envoyé. La correction et la note sur 20 arrivent avec une prochaine version.",
+  "parentSendsNotice": "Vous pouvez photographier le travail de {name} et l'envoyer ici, à sa place.",
+  "@parentSendsNotice": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationCorrected": "Devoir corrigé",
+  "correctedSeeGrade": "La note est arrivée · {group}",
+  "@correctedSeeGrade": {
+    "placeholders": {
+      "group": {
+        "type": "String"
+      }
+    }
+  },
+  "subjectAllFilter": "Matière : toutes",
+  "subjectFilter": "Matière : {name}",
+  "@subjectFilter": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "toCorrectCount": "{count, plural, =0{Rien à corriger} =1{1 à corriger} other{{count} à corriger}}",
+  "@toCorrectCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "deadlineWas": "date limite {when}",
+  "@deadlineWas": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "correctAction": "Corriger",
+  "correctCount": "Corriger ({count})",
+  "@correctCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "toCorrectInfo": "Chaque travail envoyé arrive ici, le plus ancien en premier. La note et le commentaire sont visibles par l'élève et ses parents dès l'enregistrement.",
+  "toCorrectEmptyHint": "Les travaux envoyés par vos élèves arriveront ici.",
+  "copyOf": "Copie {index} sur {count}",
+  "@copyOf": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "previousCopy": "Copie précédente",
+  "nextCopy": "Copie suivante",
+  "scoreLabel": "Note",
+  "scoreHint": "Ex. : 14,5",
+  "scoreHelper": "Un nombre de 0 à {max}, demi-points acceptés : 14,5.",
+  "@scoreHelper": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreInvalid": "La note va de 0 à {max}, par demi-points.",
+  "@scoreInvalid": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "commentLabel": "Commentaire",
+  "commentSuffix": "facultatif · visible par l'élève et ses parents",
+  "correctionCommentHint": "Ex. : Bon travail, revois la simplification des fractions.",
+  "phraseVeryGood": "Très bien !",
+  "phraseGoodWork": "Bon travail",
+  "phraseReviewLesson": "Revois la leçon",
+  "phraseHandwriting": "Soigne l'écriture",
+  "correctedCopy": "Copie corrigée",
+  "takeCorrectedPhoto": "Prendre en photo",
+  "removeCopy": "Retirer",
+  "saveAndNext": "Enregistrer et suivant",
+  "nextCopyName": "Copie suivante : {name}",
+  "@nextCopyName": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "lastCopy": "C'est la dernière copie à corriger de ce devoir.",
+  "correctionSaved": "Correction enregistrée.",
+  "allCorrected": "Toutes les copies de ce devoir sont corrigées.",
+  "noWorkPane": "Rien n'a été envoyé. Vous pouvez noter une copie rendue sur papier.",
+  "columnScore": "Note",
+  "viewCorrection": "Voir",
+  "gradeAnyway": "Noter",
+  "tileCorrected": "Corrigés",
+  "averageOutOf20": "Moyenne {value} / 20",
+  "@averageOutOf20": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "gradeAnywayInfo": "« Noter » un élève sans rendu : une copie rendue sur papier, par exemple. Un devoir sans note ne compte jamais comme 0 dans la moyenne.",
+  "yourGrade": "Ta note",
+  "childGrade": "La note de {name}",
+  "@childGrade": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "correctedOn": "Corrigé {when}",
+  "@correctedOn": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "myResultsTitle": "Mes résultats",
+  "myResultsSubtitle": "Tes notes et ton travail, matière par matière.",
+  "parentResultsTitle": "Résultats de {name}",
+  "@parentResultsTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "parentResultsSubtitle": "Les notes et le travail de {name}, matière par matière.",
+  "@parentResultsSubtitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "averageOfGrades": "{count, plural, =0{Aucune note} =1{Une seule note} other{Moyenne de {count} notes}}",
+  "@averageOfGrades": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "trendUp": "En progrès",
+  "trendDown": "En baisse",
+  "trendStable": "Stable",
+  "countOf": "{count} sur {total}",
+  "@countOf": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "homeworkSentLabel": "devoirs rendus",
+  "attendanceLabel": "présence",
+  "gradesTitle": "Notes",
+  "resultsEmpty": "Pas encore de résultat : tes notes arriveront ici.",
+  "resultsEmptyParent": "Pas encore de résultat pour {name}.",
+  "@resultsEmptyParent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "missingTitle": "Manquant : {title}",
+  "@missingTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "seeResults": "Voir les résultats",
+  "evaluationsTab": "Évaluations",
+  "newEvaluation": "Nouvelle évaluation",
+  "newEvaluationSubtitle": "Un contrôle fait en classe, sur papier : vous saisissez les notes du groupe ensuite.",
+  "editEvaluation": "Modifier l'évaluation",
+  "evaluationTitleHint": "Ex. : Évaluation : la multiplication",
+  "evaluationTitleHelp": "Les élèves et les parents voient ce titre avec la note.",
+  "notedOn": "Noté sur",
+  "scaleOther": "Autre",
+  "scaleOtherLabel": "Barème",
+  "scaleOtherHint": "Ex. : 40",
+  "scaleInvalid": "Entre 1 et 100.",
+  "evaluationScaleNote": "La note compte dans la moyenne de la matière comme celle d'un devoir. Une note sur 10 est ramenée sur 20 dans la moyenne.",
+  "createAndGrade": "Créer et saisir les notes",
+  "noChapter": "Aucun chapitre",
+  "gradesTyped": "{count, plural, =0{Aucune note sur {total}} =1{1 note sur {total}} other{{count} notes sur {total}}}",
+  "@gradesTyped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "gradesToType": "Notes à saisir",
+  "gradesDone": "Notes saisies",
+  "groupAverage": "Moyenne du groupe",
+  "absentLabel": "Absent",
+  "toType": "À saisir",
+  "columnAbsent": "Absent",
+  "columnComment": "Commentaire",
+  "commentForPupilHint": "Un mot pour l'élève (facultatif)",
+  "saveGrades": "Enregistrer les notes",
+  "gradesSaved": "Notes enregistrées.",
+  "scoreTooHigh": "Au plus {max}.",
+  "@scoreTooHigh": {
+    "placeholders": {
+      "max": {
+        "type": "String"
+      }
+    }
+  },
+  "scoreHalfPoints": "Une note par demi-points : 14 ou 14,5.",
+  "keyboardHint": "Tab passe à l'élève suivant, Maj + Tab revient, Entrée enregistre. Les demi-points s'écrivent 11,5.",
+  "absentNeverZero": "« Absent » ne compte jamais comme 0. À l'enregistrement, les élèves et leurs parents voient leur note et le commentaire.",
+  "outOf": "Sur {max}",
+  "@outOf": {
+    "placeholders": {
+      "max": {
+        "type": "String"
+      }
+    }
+  },
+  "unsavedGradesTitle": "Quitter sans enregistrer ?",
+  "unsavedGradesText": "Les notes tapées depuis le dernier enregistrement seront perdues.",
+  "leaveWithoutSaving": "Quitter",
+  "noEvaluations": "Aucune évaluation pour le moment.",
+  "noEvaluationsHint": "Un contrôle sur papier ? Créez-le ici et saisissez les notes du groupe au clavier.",
+  "gradeKindEvaluation": "Évaluation",
+  "gradeKindHomework": "Devoir",
+  "notificationEvaluation": "Nouvelle note",
+  "evaluationSeeGrade": "Une note est arrivée en {group}.",
+  "@evaluationSeeGrade": {
+    "placeholders": {
+      "group": {
+        "type": "String"
+      }
+    }
+  },
+  "gradesCount": "{count, plural, =0{Aucune note} =1{1 note} other{{count} notes}}",
+  "@gradesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dayContentEmpty": "Aucun document partagé avec ce groupe pour l'instant.",
+  "notificationWorkSent": "{count, plural, =0{Aucun travail rendu} =1{1 travail rendu} other{{count} travaux rendus}}",
+  "@notificationWorkSent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "notificationDeadlinePassed": "Date limite passée",
+  "workLate": "En retard",
+  "everyoneSent": "Tout le monde a rendu",
+  "missingPupils": "{count, plural, =0{Aucun manquant} =1{1 manquant : {names}} other{{count} manquants : {names}}}",
+  "@missingPupils": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "names": {
+        "type": "String"
+      }
+    }
+  },
+  "namesAnd": "{first} et {last}",
+  "@namesAnd": {
+    "placeholders": {
+      "first": {
+        "type": "String"
+      },
+      "last": {
+        "type": "String"
+      }
+    }
+  },
+  "namesAndOthers": "{count, plural, =0{{names}} =1{{names} et 1 autre} other{{names} et {count} autres}}",
+  "@namesAndOthers": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "names": {
+        "type": "String"
+      }
+    }
+  },
+  "actionSee": "Voir",
+  "noNotificationsTeacher": "Rien de nouveau pour le moment.",
+  "noNotificationsHintTeacher": "Vous serez prévenue ici quand un élève rend un travail ou quand une date limite passe.",
+  "quickEvaluation": "Évaluation",
+  "importTitle": "Importer des élèves",
+  "importSubtitle": "Une classe entière d'un coup, depuis Excel : les élèves, leurs parents et leurs accès.",
+  "importReadLines": "{file} · {count, plural, =0{aucune ligne lue} =1{1 ligne lue} other{{count} lignes lues}}. Vérifiez avant de créer les élèves.",
+  "@importReadLines": {
+    "placeholders": {
+      "file": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importStepFile": "Fichier",
+  "importStepCheck": "Vérifier",
+  "importStepAccounts": "Identifiants",
+  "importStepOf": "Étape {step} sur 3 · {name}",
+  "@importStepOf": {
+    "placeholders": {
+      "step": {
+        "type": "int"
+      },
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "importChooseTitle": "Choisissez votre fichier",
+  "importChooseHint": "Excel (.xlsx) ou CSV, 300 lignes au plus. Rien n'est créé avant la vérification.",
+  "importReading": "Lecture du fichier…",
+  "importTemplate": "Télécharger le modèle",
+  "importColumnsTitle": "Les colonnes attendues",
+  "importColumnsHint": "Une ligne par élève. Les noms de colonnes peuvent être en français ou en arabe. * obligatoire.",
+  "importColFirstName": "Prénom",
+  "importColLastName": "Nom",
+  "importColParentFirstName": "Prénom du parent",
+  "importColParentLastName": "Nom du parent",
+  "importColParentPhone": "Téléphone du parent",
+  "importTipSiblings": "Un parent qui a plusieurs enfants : le même téléphone sur chaque ligne, un seul accès est créé.",
+  "importTipNoParent": "Sans parent, l'élève est ajouté quand même ; vous ouvrirez un accès plus tard depuis sa fiche.",
+  "importForAll": "Pour tous les élèves du fichier",
+  "importGroup": "Ajouter au groupe",
+  "importNoGroup": "Aucun groupe",
+  "importGroupHelp": "La colonne « Groupe » du fichier compte aussi.",
+  "importLevel": "Niveau quand la colonne est vide",
+  "importCreateLogins": "Créer aussi l'accès des élèves",
+  "importCreateLoginsHelp": "Sinon, seuls les parents reçoivent un accès (avec leur téléphone). Vous pourrez ouvrir celui d'un élève depuis sa fiche.",
+  "importReadyCount": "Prêts à importer",
+  "importKnownCount": "Parent déjà inscrit, lié",
+  "importExistsCount": "Déjà inscrit, ignoré",
+  "importErrorCount": "À corriger dans le fichier",
+  "importColumnLine": "Ligne",
+  "importColumnParent": "Parent",
+  "importColumnState": "État",
+  "importStateReady": "Prêt",
+  "importStateKnown": "Parent déjà inscrit",
+  "importStateExists": "Déjà inscrit",
+  "importStateError": "À corriger",
+  "importKnownNote": "{parent} a déjà un accès : {child} rejoint ses enfants.",
+  "@importKnownNote": {
+    "placeholders": {
+      "parent": {
+        "type": "String"
+      },
+      "child": {
+        "type": "String"
+      }
+    }
+  },
+  "importExistsNote": "{name} est déjà dans vos élèves : cochez la ligne pour l'ajouter quand même.",
+  "@importExistsNote": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "importSameParentNote": "Même parent que la ligne {line} : un seul accès.",
+  "@importSameParentNote": {
+    "placeholders": {
+      "line": {
+        "type": "int"
+      }
+    }
+  },
+  "importProblemFirstName": "Prénom manquant.",
+  "importProblemLastName": "Nom manquant.",
+  "importProblemLevelMissing": "Niveau manquant : choisissez-en un pour tout le fichier.",
+  "importProblemLevelUnknown": "Niveau inconnu : « {text} ». De la 1ère à la 6ème année.",
+  "@importProblemLevelUnknown": {
+    "placeholders": {
+      "text": {
+        "type": "String"
+      }
+    }
+  },
+  "importProblemGroupUnknown": "Groupe inconnu : « {text} ».",
+  "@importProblemGroupUnknown": {
+    "placeholders": {
+      "text": {
+        "type": "String"
+      }
+    }
+  },
+  "importProblemPhoneInvalid": "Téléphone de l'élève : 8 chiffres.",
+  "importProblemPhoneTaken": "Le téléphone de l'élève est celui d'un autre compte.",
+  "importProblemParentPhoneMissing": "Téléphone du parent manquant : c'est son identifiant.",
+  "importProblemParentPhoneInvalid": "Téléphone du parent : 8 chiffres.",
+  "importProblemParentPhoneTaken": "Le téléphone du parent est celui d'un autre compte.",
+  "importProblemParentName": "Prénom et nom du parent manquants.",
+  "importProblemDuplicate": "Même élève que la ligne {line}.",
+  "@importProblemDuplicate": {
+    "placeholders": {
+      "line": {
+        "type": "int"
+      }
+    }
+  },
+  "importErrorsNote": "Les lignes « À corriger » ne sont pas importées : corrigez-les dans votre fichier puis choisissez-le à nouveau, ou importez les autres maintenant et ajoutez ces élèves plus tard.",
+  "importSummary": "{count, plural, =0{Aucun élève coché.} =1{1 élève sera ajouté} other{{count} élèves seront ajoutés}}",
+  "@importSummary": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importSummaryParents": "{count, plural, =0{.} =1{, avec 1 nouvel accès parent.} other{, avec {count} nouveaux accès parents.}}",
+  "@importSummaryParents": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importAnotherFile": "Choisir un autre fichier",
+  "importAction": "{count, plural, =0{Importer} =1{Importer 1 élève} other{Importer {count} élèves}}",
+  "@importAction": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importDoneTitle": "{count, plural, =0{Aucun élève ajouté} =1{1 élève ajouté} other{{count} élèves ajoutés}}",
+  "@importDoneTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importAddedTo": "{title} à {group}",
+  "@importAddedTo": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "group": {
+        "type": "String"
+      }
+    }
+  },
+  "importDoneParents": "{count, plural, =0{Aucun nouvel accès parent.} =1{1 nouvel accès parent.} other{{count} nouveaux accès parents.}}",
+  "@importDoneParents": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importDoneLinked": "{count, plural, =0{} =1{ 1 enfant a rejoint un parent déjà inscrit.} other{ {count} enfants ont rejoint un parent déjà inscrit.}}",
+  "@importDoneLinked": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importCopyAll": "Tout copier",
+  "importPrint": "Imprimer",
+  "importPrintNote": "Chacun choisit son propre mot de passe à la première connexion. « Imprimer » prépare une carte par famille à découper et à donner en classe.",
+  "importNoAccounts": "Aucun nouvel accès à donner : les enfants ont rejoint des parents déjà inscrits ou n'ont pas de parent.",
+  "importAgain": "Importer un autre fichier",
+  "importSeeStudents": "Voir mes élèves",
+  "parentOf": "Parent de {children}",
+  "@parentOf": {
+    "placeholders": {
+      "children": {
+        "type": "String"
+      }
+    }
+  },
+  "printCardTitle": "Accès de {name}",
+  "@printCardTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "printCardHelp": "Ouvrez NG Class, entrez l'identifiant et ce mot de passe, puis choisissez le vôtre.",
+  "printFileName": "Identifiants NG Class",
+  "searchParents": "Parents",
+  "searchHomeworkSection": "Devoirs et évaluations",
+  "searchKeysChoose": "pour choisir",
+  "searchKeysOpen": "pour ouvrir",
+  "searchKeysClose": "pour fermer",
+  "searchEverywhere": "Partout :",
+  "searchKeyEnter": "Entrée",
+  "searchKeyEscape": "Échap",
+  "searchNothing": "Rien pour « {query} »",
+  "@searchNothing": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "searchNothingHint": "Cherchez un élève (nom, identifiant, téléphone d'un parent), un groupe, un document, un chapitre, un devoir ou une évaluation.",
+  "searchOpen": "Rechercher",
+  "copyLink": "Copier le lien",
+  "linkCopied": "Lien copié."
+}

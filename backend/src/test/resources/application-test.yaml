@@ -1,0 +1,15 @@
+# The database comes from Testcontainers (@ServiceConnection); accounts are created by each test.
+app:
+  storage:
+    dir: target/test-files
+  jwt:
+    secret: test-secret-at-least-32-characters-long-0123456789
+  security:
+    bcrypt-strength: 4
+  seed:
+    teacher:
+      username: ""
+      password: ""
+    admin:
+      username: ""
+      password: ""

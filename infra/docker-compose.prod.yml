@@ -1,0 +1,65 @@
+# Production on one small VPS (docs/03-conception/01-ARCHITECTURE.md).
+# Usage, from infra/: cp .env.example .env (fill it), build the web app, then
+#   docker compose -f docker-compose.prod.yml up -d --build
+name: ngclass
+
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ngclass
+      POSTGRES_USER: ngclass
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?DB_PASSWORD is required}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ngclass -d ngclass"]
+      interval: 10s
+      retries: 10
+
+  api:
+    build: ../backend
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      APP_ENV: prod
+      APP_PORT: 8080
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: ngclass
+      DB_USERNAME: ngclass
+      DB_PASSWORD: ${DB_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET:?JWT_SECRET is required}
+      ALLOWED_ORIGINS: https://${DOMAIN}
+      TEACHER_USERNAME: ${TEACHER_USERNAME:-}
+      TEACHER_PASSWORD: ${TEACHER_PASSWORD:-}
+      TEACHER_FIRST_NAME: ${TEACHER_FIRST_NAME:-}
+      TEACHER_LAST_NAME: ${TEACHER_LAST_NAME:-}
+    volumes:
+      - files:/data/files
+
+  # HTTPS with automatic Let's Encrypt certificates; serves the Flutter web build and proxies /api.
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on:
+      - api
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOMAIN: ${DOMAIN:?DOMAIN is required}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ../app/build/web:/srv:ro
+      - caddy-data:/data
+      - caddy-config:/config
+
+volumes:
+  db-data:
+  files:
+  caddy-data:
+  caddy-config:

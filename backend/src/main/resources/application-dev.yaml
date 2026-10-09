@@ -1,0 +1,24 @@
+# Development only. These are test accounts for the local database, never real people.
+# Their passwords live in backend/.env (never committed): TEACHER_PASSWORD, ADMIN_PASSWORD,
+# DEV_STUDENT_PASSWORD, DEV_PARENT_PASSWORD.
+app:
+  seed:
+    teacher:
+      username: ${TEACHER_USERNAME:enseignante}
+      password: ${TEACHER_PASSWORD:}
+      first-name: ${TEACHER_FIRST_NAME:Ines}
+      last-name: ${TEACHER_LAST_NAME:Haddad}
+      must-change-password: false
+    # The owner of the platform (dashboard at /admin/enseignants).
+    admin:
+      username: ${ADMIN_USERNAME:admin}
+      password: ${ADMIN_PASSWORD:}
+      first-name: ${ADMIN_FIRST_NAME:Administrateur}
+      last-name: ${ADMIN_LAST_NAME:NG Class}
+      must-change-password: false
+  dev-data:
+    # A student (login by username) and their parent (login by phone 20000001).
+    student-username: eleve.demo
+    student-password: ${DEV_STUDENT_PASSWORD:}
+    parent-phone: "20000001"
+    parent-password: ${DEV_PARENT_PASSWORD:}

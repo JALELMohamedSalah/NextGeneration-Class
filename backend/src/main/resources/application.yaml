@@ -1,0 +1,84 @@
+spring:
+  application:
+    name: ngclass-backend
+  profiles:
+    # Production unless backend/.env says APP_ENV=dev: a server never starts with the dev test accounts.
+    active: ${APP_ENV:prod}
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5433}/${DB_NAME:ngclass}
+    username: ${DB_USERNAME:ngclass}
+    password: ${DB_PASSWORD:}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  threads:
+    virtual:
+      enabled: true
+  servlet:
+    multipart:
+      # Spec 04: 20 MB per file; the request carries the file and a small JSON part.
+      max-file-size: 20MB
+      max-request-size: 21MB
+  messages:
+    basename: i18n/messages
+    encoding: UTF-8
+    fallback-to-system-locale: false
+
+server:
+  port: ${APP_PORT:8080}
+  tomcat:
+    # Read a too large upload to the end, so the app gets the "20 Mo" message instead of a cut connection.
+    max-swallow-size: 25MB
+  compression:
+    enabled: true
+    mime-types: application/json
+    min-response-size: 1024
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+
+app:
+  # Uploaded documents. A Docker volume in production (infra), a local folder in development.
+  storage:
+    dir: ${STORAGE_DIR:./data/files}
+  # Every date shown to users is in this zone; everything is stored in UTC.
+  time-zone: Africa/Tunis
+  # Patterns, so a Flutter web dev server on any localhost port is accepted.
+  allowed-origins: ${ALLOWED_ORIGINS:http://localhost:*,http://127.0.0.1:*}
+  jwt:
+    secret: ${JWT_SECRET:}
+    # Renewed silently by the app; short so a role change applies quickly.
+    access-token-ttl: ${JWT_ACCESS_TTL:15m}
+    # Client decision: stay signed in. Every refresh pushes the expiry one more year away,
+    # so a user who opens the app at least once a year is never logged out.
+    refresh-token-ttl: ${JWT_REFRESH_TTL:365d}
+  security:
+    bcrypt-strength: ${BCRYPT_STRENGTH:11}
+    max-login-attempts: ${MAX_LOGIN_ATTEMPTS:5}
+    lock-duration: ${ACCOUNT_LOCK_DURATION:15m}
+  seed:
+    # A first teacher account, created on first start when none exists. Others come from the dashboard.
+    teacher:
+      username: ${TEACHER_USERNAME:}
+      password: ${TEACHER_PASSWORD:}
+      first-name: ${TEACHER_FIRST_NAME:}
+      last-name: ${TEACHER_LAST_NAME:}
+      must-change-password: ${TEACHER_MUST_CHANGE_PASSWORD:true}
+    # The owner of the platform: signs in to the dashboard and adds teachers (created when none exists).
+    admin:
+      username: ${ADMIN_USERNAME:}
+      password: ${ADMIN_PASSWORD:}
+      first-name: ${ADMIN_FIRST_NAME:}
+      last-name: ${ADMIN_LAST_NAME:}
+      must-change-password: ${ADMIN_MUST_CHANGE_PASSWORD:true}

@@ -1,0 +1,23 @@
+# Local development: only the database. The API runs with `mvn spring-boot:run`, the app with `flutter run`.
+# Port 5433 so it never collides with another local PostgreSQL.
+name: ngclass-dev
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ngclass
+      POSTGRES_USER: ngclass
+      POSTGRES_PASSWORD: ngclass_dev
+    # This machine only: the dev password is in the public repository.
+    ports:
+      - "127.0.0.1:5433:5432"
+    volumes:
+      - ngclass-dev-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ngclass -d ngclass"]
+      interval: 5s
+      retries: 10
+
+volumes:
+  ngclass-dev-db:
