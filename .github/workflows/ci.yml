@@ -1,0 +1,63 @@
+# Continuous integration: builds and tests the API and the Flutter app on every push and pull request.
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:   # also allows starting it by hand from the GitHub "Actions" tab
+
+# A newer push on the same branch cancels the older, still-running pipeline.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend:
+    name: Backend (Spring Boot)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v4
+
+      - name: Install Java 21 (Temurin, same as the Dockerfile)
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven   # reuses ~/.m2 between runs, so dependencies are not downloaded every time
+
+      # Docker is preinstalled on ubuntu-latest, so Testcontainers can start its PostgreSQL here too.
+      - name: Build and run the tests
+        run: mvn -B verify
+
+  app:
+    name: App (Flutter)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v4
+
+      - name: Install Flutter (the version the project is built with)
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: '3.38.x'
+          cache: true
+
+      - name: Get the packages
+        run: flutter pub get
+
+      - name: Static analysis
+        run: flutter analyze
+
+      - name: Run the tests
+        run: flutter test --concurrency=4
+
+      - name: Build the web app (checks that a release build compiles)
+        run: flutter build web --release --pwa-strategy=none --dart-define=API_BASE_URL=/api/v1
