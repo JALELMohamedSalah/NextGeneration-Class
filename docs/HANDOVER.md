@@ -208,7 +208,7 @@ Login, choose password, splash, the three shells, Ma journée (empty), student h
 - The Arabic wording of the new keys still needs a native speaker's read (spec 6).
 
 ### Task B · Repository hygiene
-1. CI: `.github/workflows/ci.yml` with two jobs: backend `mvn -B verify` (Java 21, Testcontainers works on GitHub runners) and app `flutter analyze` + `flutter test` (Flutter 3.38.x).
+1. CI: `.github/workflows/ci.yml` with two jobs: backend `mvn -B verify` (Java 21, Testcontainers works on GitHub runners) and app `flutter analyze` + `flutter test` (Flutter 3.38.x). **Written and pushed 2026-10-17 on branch `ci/github-actions`, not merged into `main` yet.** The deployment track (environment, CI, CD, server) has its own handover: `docs/04-delivery/05-DEPLOYMENT_HANDOVER.md`, and its own prompt: `docs/04-delivery/06-DEPLOYMENT_NEXT_AGENT_PROMPT.md`.
 2. ~~First commit~~ **done 2026-10-09** (pushed to github.com/ramilaribi/NextGeneration-Class). Commit and push only when the user asks; check `git status` and that no secret is staged before committing.
 3. ~~Default profile~~ **done 2026-10-09**: the API defaults to `prod` (`APP_ENV:prod` in `application.yaml`); local work sets `APP_ENV=dev` in `backend/.env`. `PasswordChangeFilter` refuses API calls until a temporary password is changed.
 
