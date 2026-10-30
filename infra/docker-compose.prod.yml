@@ -1,6 +1,8 @@
 # Production on one small VPS (docs/03-conception/01-ARCHITECTURE.md).
-# Usage, from infra/: cp .env.example .env (fill it), build the web app, then
-#   docker compose -f docker-compose.prod.yml up -d --build
+# Usage, from infra/: cp .env.example .env (fill it), build the web app
+# (cd app && flutter build web --release --pwa-strategy=none), then
+#   docker compose -f docker-compose.prod.yml up -d --build --wait
+# The CI/CD pipeline (.github/workflows/ci.yml, job "deploy") runs the same command with its secrets.
 name: ngclass
 
 services:
@@ -38,15 +40,33 @@ services:
       TEACHER_PASSWORD: ${TEACHER_PASSWORD:-}
       TEACHER_FIRST_NAME: ${TEACHER_FIRST_NAME:-}
       TEACHER_LAST_NAME: ${TEACHER_LAST_NAME:-}
+      ADMIN_USERNAME: ${ADMIN_USERNAME:-}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+      ADMIN_FIRST_NAME: ${ADMIN_FIRST_NAME:-}
+      ADMIN_LAST_NAME: ${ADMIN_LAST_NAME:-}
+      # Uploaded documents go to the "files" volume below (the default ./data/files is not writable by the app user).
+      STORAGE_DIR: /data/files
     volumes:
       - files:/data/files
+    # Healthy once Spring answers UP; Caddy waits for it, and `up --wait` fails the deploy if it never does.
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8080/actuator/health | grep -q UP"]
+      interval: 10s
+      timeout: 5s
+      start_period: 60s
+      retries: 10
 
   # HTTPS with automatic Let's Encrypt certificates; serves the Flutter web build and proxies /api.
+  # The image is caddy:2-alpine with the web build copied in (app/web.Dockerfile), so a deploy ships the app as one piece.
   caddy:
-    image: caddy:2-alpine
+    build:
+      context: ../app
+      dockerfile: web.Dockerfile
+    image: ngclass-web
     restart: unless-stopped
     depends_on:
-      - api
+      api:
+        condition: service_healthy
     ports:
       - "80:80"
       - "443:443"
@@ -54,7 +74,6 @@ services:
       DOMAIN: ${DOMAIN:?DOMAIN is required}
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
-      - ../app/build/web:/srv:ro
       - caddy-data:/data
       - caddy-config:/config
 
