@@ -1,0 +1,133 @@
+# CI/CD for NextGeneration Class.
+# CI: builds and tests the API and the Flutter app on every push and pull request (GitHub's machines).
+# CD: after a push to main with both test jobs green, the "deploy" job starts the production stack
+#     (infra/docker-compose.prod.yml) on a self-hosted runner. Today that runner is Mohamed's PC (rehearsal);
+#     later it is the server. See docs/04-delivery/05-DEPLOYMENT_HANDOVER.md.
+name: CI/CD
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:   # "Run workflow" button in the Actions tab (deploys only when started on main)
+
+# Read-only by default; no job here needs to write to the repository.
+permissions:
+  contents: read
+
+# A newer push on a branch cancels the older run of that branch, except on main,
+# where a deploy must never be cut in the middle.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+jobs:
+  backend:
+    name: Backend (Spring Boot)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v4
+
+      - name: Install Java 21 (Temurin, same as the Dockerfile)
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven   # reuses ~/.m2 between runs, so dependencies are not downloaded every time
+
+      # Docker is preinstalled on ubuntu-latest, so Testcontainers can start its PostgreSQL here too.
+      - name: Build and run the tests
+        run: mvn -B verify
+
+  app:
+    name: App (Flutter)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v4
+
+      - name: Install Flutter (the version the project is built with)
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: '3.38.x'
+          cache: true
+
+      - name: Get the packages
+        run: flutter pub get
+
+      - name: Static analysis
+        run: flutter analyze
+
+      - name: Run the tests
+        run: flutter test --concurrency=4
+
+      # No API_BASE_URL: a release web build calls its own address + /api/v1, which Caddy sends to the API
+      # (app/lib/core/config/app_config.dart).
+      - name: Build the web app
+        run: flutter build web --release --pwa-strategy=none
+
+      # Handed to the deploy job, which bakes it into the Caddy image (app/web.Dockerfile).
+      - name: Keep the web build for the deploy job
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: web
+          path: app/build/web
+          retention-days: 3
+
+  deploy:
+    name: Deploy (self-hosted)
+    needs: [backend, app]
+    # Only main, only from a push or a manual start, and only once the repository variable DEPLOY_ENABLED is "true".
+    # Never on pull requests: this job runs on a machine we own, and the repository is public.
+    if: >-
+      github.ref == 'refs/heads/main'
+      && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+      && vars.DEPLOY_ENABLED == 'true'
+    # The runner registered with the label "ngclass-deploy" (Mohamed's PC today, the server later).
+    runs-on: [self-hosted, ngclass-deploy]
+    # Shows each deployment in the repository's "Deployments" page; secrets can also be stored per environment.
+    environment: production
+    # Two deploys never run at the same time on the same machine.
+    concurrency:
+      group: deploy-production
+      cancel-in-progress: false
+    # Docker Compose reads these environment variables for the ${...} in the compose file, so no .env file
+    # is written on the machine. Every compose command needs them (the file refuses to load without DOMAIN).
+    env:
+      DOMAIN: ${{ vars.DEPLOY_DOMAIN }}
+      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+      JWT_SECRET: ${{ secrets.JWT_SECRET }}
+      TEACHER_USERNAME: ${{ vars.TEACHER_USERNAME }}
+      TEACHER_PASSWORD: ${{ secrets.TEACHER_PASSWORD }}
+      TEACHER_FIRST_NAME: ${{ vars.TEACHER_FIRST_NAME }}
+      TEACHER_LAST_NAME: ${{ vars.TEACHER_LAST_NAME }}
+      ADMIN_USERNAME: ${{ vars.ADMIN_USERNAME }}
+      ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+      ADMIN_FIRST_NAME: ${{ vars.ADMIN_FIRST_NAME }}
+      ADMIN_LAST_NAME: ${{ vars.ADMIN_LAST_NAME }}
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v4
+
+      - name: Get the web build from the app job
+        uses: actions/download-artifact@v4
+        with:
+          name: web
+          path: app/build/web
+
+      # --build rebuilds the API and web images from this commit; --wait fails the job if a service never gets healthy.
+      - name: Start the production stack
+        working-directory: infra
+        run: docker compose -f docker-compose.prod.yml up -d --build --wait --wait-timeout 300 --remove-orphans
+
+      - name: Show what is running
+        working-directory: infra
+        run: docker compose -f docker-compose.prod.yml ps

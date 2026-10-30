@@ -1,0 +1,3 @@
+# Only the web build goes into the image (app/web.Dockerfile); keeps the build context small.
+*
+!build/web
